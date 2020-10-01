@@ -1,0 +1,94 @@
+/*** 
+
+====================================================================
+	Nav bar
+====================================================================
+
+***/
+
+
+/* SideNav */
+.navbar-brand{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* The menu icon */
+
+.zmdi {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+    font-size: 26px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar-brand img{
+    width: 89%;
+    padding-left: 20px;
+}
+
+/* Lists */
+
+
+.theme-blush .sidebar .menu .list li.active>:first-child span {
+    color: #001fb0;
+}
+
+.theme-blush .sidebar .menu .list a:hover {
+    color: #001fb0;
+}
+
+/* Icons before */
+.zmdi-apps:before {
+    content: '\f313';
+}
+
+.zmdi-home:before {
+    content: '\f175';
+    color: #001fb0;
+}
+
+/* Right icons hover */
+
+.theme-blush .navbar-right .navbar-nav>li>a:hover {
+    background: #001fb0;
+}
+
+/* Setting pop up style */
+
+.theme-blush .right-sidebar .nav-tabs {
+    background: #001fb0;
+}
+
+.theme-blush .right-sidebar .nav-tabs li a.nav-link.active, .theme-blush .right-sidebar .nav-tabs li a.nav-link:hover {
+    background: #fff;
+    color: #001fb0;
+    border-color: #001fb0;
+}
+
+
+.theme-blush .radio input[type="radio"]:checked+label::before {
+    background: #001fb0;
+    color: #fff;
+    border-color: #001fb0;
+}
+
+
+/*** 
+
+====================================================================
+	Dashbord
+====================================================================
+
+***/
+
+
+/* progress bar */
+
+.l-purple {
+    background: linear-gradient(0deg, #001fb0, rgb(31, 66, 223)) !important;
+    color: #fff !important;
+}
+
