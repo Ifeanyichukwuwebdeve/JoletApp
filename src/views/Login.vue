@@ -1,117 +1,117 @@
 <template>
   <div>
+    <div class="container error-div">
+      <li class="alert alert-danger text-center" v-for="error in errors" :key="error">
+        {{error}}
+      </li>
+    </div>
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-12 col-lg-12">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-8 col-lg-6 login_container">
-                <div class="contain-image text-center">
-                  <img src="img/logo.png" alt="" class="text-center" />
-                </div>
-
-                <form action="" class="login-form">
-                  <h2 class="text-center">Log in</h2>
-
-                  <div class="login-line"></div>
-                  <div class="container pr-5 pl-5 pt-0 pb-5">
-                    <div class="form-group">
-                      <label for="">Email</label>
-                      <input
-                        type="email"
-                        name="email"
-                        id=""
-                        class="form-control"
-                        placeholder="email"
-                        aria-describedby="helpId"
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <label for="">Password</label>
-                      <input
-                        type="email"
-                        name="Password"
-                        id=""
-                        class="form-control"
-                        placeholder="Password"
-                        aria-describedby="helpId"
-                      />
-                    </div>
-
-                    <div class="container remember-forgot">
-                      <div class="remember">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input
-                              type="checkbox"
-                              class="form-check-input"
-                              name=""
-                              id=""
-                              value="checkedValue"
-                            />
-                            Remember Me
-                          </label>
-                        </div>
-                      </div>
-                      <div class="forgot"><a href="#">Forgot password?</a></div>
-                    </div>
-
-                    <button class="btn">Log in</button>
-
-                    <div class="dont-have-account">
-                      <p class="text-center">
-                        Don't have an account? <a href="signup.html">Sign Up</a>
-                      </p>
-                    </div>
-                  </div>
-                </form>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 login_container">
+          <div class="contain-image text-center">
+            <img src="img/logo.png" alt="" class="text-center" />
+          </div>
+          <div class="login-form">
+            <h2 class="text-center">Log in</h2>
+            <div class="login-line"></div>
+            <form action="" v-on:submit.prevent="onSubmit" class="container">
+              <div class="form-group">
+                <label for="">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  v-model="email"
+                  class="form-control"
+                  placeholder="email"
+                  aria-describedby="helpId"
+                  required
+                />
               </div>
-            </div>
+
+              <div class="form-group">
+                <label for="">Password</label>
+                <input
+                  type="password"
+                  name="Password"
+                  v-model="password"
+                  class="form-control"
+                  placeholder="Password"
+                  aria-describedby="helpId"
+                  required
+                />
+              </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        name=""
+                        v-model="remember"
+                        value="checkedValue"
+                      />
+                      Remember Me
+                    </label>
+                <div class="forgot">
+                  <a href="#">Forgot password?</a>
+                </div>
+              </div>
+
+              <button class="btn-submit">Log in</button>
+
+              <div class="dont-have-account">
+                <p class="text-center">
+                  Don't have an account?
+                  <a href="/signup">Sign Up</a>
+                </p>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- <h2>Login</h2>
-    <form v-on:submit="login">
-      <input type="text" name="email" /><br />
-      <input type="password" name="password" /><br />
-      <input type="submit" value="Login" />
-    </form>
-  </div> -->
+      </div>
+      </div>
 </template>
 
 <script>
-import router from '../router'
-import axios from 'axios'
+// import router from "../router";
+// import axios from "axios";
 export default {
-  name: 'Login',
+  data: function () {
+    return {
+      errors: [],
+      email: '',
+      password: '',
+      remember: ''
+    }
+  },
   methods: {
-    login: (e) => {
-      e.preventDefault()
-      const email = 'user@email.com'
-      const password = 'password'
-      const login = () => {
-        const data = {
-          email: email,
-          password: password
-        }
-        axios
-          .post('/api/login', data)
-          .then((response) => {
-            console.log('Logged in')
-            router.push('/dashboard')
-          })
-          .catch((errors) => {
-            console.log('Cannot log in')
-          })
+    onSubmit () {
+      this.errors = []
+      if (!this.email) {
+        this.errors.push('Email required.')
+      } else if (!this.validEmail(this.email)) {
+        this.errors.push('Valid email required.')
       }
-      login()
+      if (!this.password) {
+        this.errors.push('Password required.')
+      }
+      if (this.password <= 6) {
+        this.errors.push('Password must exceed 6 characters')
+      }
+      if (!this.errors.length) {
+        return true
+      }
+    },
+    validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return re.test(email)
     }
   }
 }
 </script>
 
 <style scoped>
+.alert-danger{
+  color: #fff !important;
+}
 </style>

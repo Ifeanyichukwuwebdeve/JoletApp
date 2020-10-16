@@ -1,100 +1,125 @@
 <template>
   <div>
+    <div class="container error-div">
+      <li class="alert alert-danger text-center" v-for="error in errors" :key="error">
+        {{error}}
+      </li>
+    </div>
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-12 col-lg-12">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-8 col-lg-7 login_container">
-                <div class="contain-image text-center">
-                  <img src="img/logo.png" alt="" class="text-center" />
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-7 login_container">
+          <div class="contain-image text-center">
+            <img src="img/logo.png" alt="" class="text-center" />
+          </div>
+          <div class="login-form">
+            <h2 class="text-center">Sign up to continue</h2>
+            <div class="login-line"></div>
+            <form action="/api/users/register" method="post" @submit.prevent="onSubmit" class="container">
+
+              <div class="form-row pt-3">
+                <div class="col-12 col-sm-6">
+                  <label for="firstname">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="firstName"
+                    placeholder="First name"
+                    required
+                  />
                 </div>
 
-                <form action="" class="login-form">
-                  <h2 class="text-center">Sign up to continue</h2>
-
-                  <div class="login-line"></div>
-                  <div class="container pr-5 pl-5 pt-0 pb-5">
-                    <div class="form-row pt-3">
-                      <div class="col-12 col-sm-6">
-                        <label for="firstname">First Name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="First name"
-                        />
-                      </div>
-
-                      <div class="col-12 col-sm-6">
-                        <label for="lastname">Last Name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Last name"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="form-row pt-3">
-                      <div class="col-12 col-sm-6">
-                        <label for="email">Email</label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          placeholder="hello@gmail.com"
-                        />
-                      </div>
-
-                      <div class="col-12 col-sm-6">
-                        <label for="country">Country</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Nigeria"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="form-row pt-3">
-                      <div class="col-12 col-sm-6">
-                        <label for="phone">Phone Number</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          placeholder="+2347011591439"
-                        />
-                      </div>
-
-                      <div class="col-12 col-sm-6">
-                        <label for="reffered">Reffered By</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Nobody"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="form-group pt-3">
-                      <label for="password">Password</label>
-                      <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        class="form-control"
-                        placeholder="********"
-                        aria-describedby="helpId"
-                      />
-                    </div>
-                    <button class="btn" type="submit">Sign up</button>
-
-                    <div class="dont-have-account text-center">
-                      <p>Have an account? <a href="login.html">Log in</a></p>
-                    </div>
-                  </div>
-                </form>
+                <div class="col-12 col-sm-6">
+                  <label for="lastname">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="lastName"
+                    placeholder="Last name"
+                    required
+                  />
+                </div>
               </div>
-            </div>
+
+              <div class="form-row pt-3">
+                <div class="col-12 col-sm-6">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    v-model="email"
+                    placeholder="hello@gmail.com"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <label for="country">Country</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="country"
+                    placeholder="Nigeria"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-row pt-3">
+                <div class="col-12 col-sm-6">
+                  <label for="phone">Phone Number</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    v-model="phone"
+                    placeholder="+2347011591439"
+                    maxlength="11"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <label for="reffered">Reffered By</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="reffered"
+                    placeholder="Nobody"
+                  />
+                </div>
+              </div>
+              <div class="form-row pt-3">
+                <div class="col-12 col-sm-6">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="form-control"
+                    v-model="password"
+                    placeholder="********"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <label for="password">Repeat Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="passwordRepeat"
+                    class="form-control"
+                    v-model="passwordRepeat"
+                    placeholder="********"
+                    required
+                  />
+              </div>
+              </div>
+              <button class="btn-submit" type="submit" >Sign up</button>
+
+              <div class="dont-have-account text-center">
+                <p>Have an account? <a href="/login">Log in</a></p>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -103,7 +128,90 @@
 </template>
 
 <script>
+// import router from '../router'
+import axios from 'axios'
 export default {
-  name: 'Signup'
+  name: 'Signup',
+  data: function () {
+    return {
+      errors: [],
+      firstName: null,
+      lastName: null,
+      email: null,
+      password: null,
+      passwordRepeat: null,
+      country: null,
+      phone: null,
+      reffered: null
+    }
+  },
+  methods: {
+    onSubmit () {
+      this.errors = []
+
+      if (!this.firstName) {
+        return this.errors.push('First name is required.')
+      }
+      if (!this.lastName) {
+        return this.errors.push('Last name is required.')
+      }
+      if (!this.email) {
+        return this.errors.push('Email is required.')
+      } else if (!this.validEmail(this.email)) {
+        return this.errors.push('Valid email required.')
+      }
+      if (!this.phone) {
+        return this.errors.push('Phone is required.')
+      }
+      if (!this.country) {
+        return this.errors.push('Country required.')
+      }
+      if (!this.password) {
+        return this.errors.push('Password is  required.')
+      }
+      if (!this.passwordRepeat.includes(this.password)) {
+        return this.errors.push('Passwords must match')
+      }
+      if (!this.errors) {
+        return {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          password: this.password,
+          country: this.country,
+          phone: this.phone,
+          reffered: this.reffered
+        }
+      }
+
+      const register = {
+        firstName: this.firstName,
+        lastName: this.lastName,
+        email: this.email,
+        password: this.password,
+        country: this.country,
+        phone: this.phone,
+        reffered: this.reffered
+      }
+      axios
+        .post('/api/users/register', register)
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    },
+    validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return re.test(email)
+    }
+  }
 }
 </script>
+
+<style>
+.alert-danger{
+  color: #fff !important;
+}
+</style>

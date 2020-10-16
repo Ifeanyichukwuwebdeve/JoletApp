@@ -32,7 +32,7 @@
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                   >
-                    <span class="icon flaticon-menu-1"></span>
+                    <span @click="onLoad" class="icon flaticon-menu-1"></span>
                   </button>
                 </div>
 
@@ -98,7 +98,48 @@
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  methods: {
+    onLoad () {
+      (function ($) {
+        'use strict'
+        // Mobile Nav Hide Show
+        if ($('.mobile-menu').length) {
+          $('.mobile-menu .menu-box').mCustomScrollbar()
+
+          var mobileMenuContent = $(
+            '.main-header .nav-outer .main-menu .navigation'
+          ).html()
+          $('.mobile-menu .navigation').append(mobileMenuContent)
+          $('.sticky-header .navigation').append(mobileMenuContent)
+          $('.mobile-menu .close-btn').on('click', function () {
+            $('body').removeClass('mobile-menu-visible')
+          })
+          // Dropdown Button
+          $('.mobile-menu li.dropdown .dropdown-btn').on('click', function () {
+            $(this).toggleClass('open')
+            $(this).prev('ul').slideToggle(500)
+          })
+          // Menu Toggle Btn
+          $('.mobile-nav-toggler').on('click', function () {
+            $('body').addClass('mobile-menu-visible')
+          })
+          $(document).keydown(function (e) {
+            if (e.keyCode === 27) {
+              $('body').removeClass('mobile-menu-visible')
+            }
+          })
+          // Menu Toggle Btn
+          $('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on(
+            'click',
+            function () {
+              $('body').removeClass('mobile-menu-visible')
+            }
+          )
+        }
+      })(window.jQuery)
+    }
+  }
 }
 </script>
 
