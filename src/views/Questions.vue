@@ -1,17 +1,17 @@
 <template>
   <div>
     <QuestionHeader />
-    <b-container class="bv-example-row">
-      <b-row>
-        <b-col sm="6" lg="12" offset="3">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-8">
           <QuestionBox
             v-if="questions.length"
             :currentQuestion="questions[index]"
             :next="next"
            />
-        </b-col>
-      </b-row>
-    </b-container>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

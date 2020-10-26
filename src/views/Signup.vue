@@ -14,7 +14,7 @@
           <div class="login-form">
             <h2 class="text-center">Sign up to continue</h2>
             <div class="login-line"></div>
-            <form action="/api/users/register" method="post" @submit.prevent="onSubmit" class="container">
+            <form @submit.prevent="onSubmit" class="container">
 
               <div class="form-row pt-3">
                 <div class="col-12 col-sm-6">
@@ -140,9 +140,9 @@ export default {
       email: null,
       password: null,
       passwordRepeat: null,
-      country: null,
+      country: 'Nigeria',
       phone: null,
-      reffered: null
+      reffered: 'Nobody'
     }
   },
   methods: {
@@ -163,11 +163,17 @@ export default {
       if (!this.phone) {
         return this.errors.push('Phone is required.')
       }
+      if (this.phone <= 10) {
+        return this.errors.push('Phone must be 11 characters')
+      }
       if (!this.country) {
         return this.errors.push('Country required.')
       }
       if (!this.password) {
         return this.errors.push('Password is  required.')
+      }
+      if (this.password <= 6) {
+        return this.errors.push('Password must exceed 6 characters')
       }
       if (!this.passwordRepeat.includes(this.password)) {
         return this.errors.push('Passwords must match')
@@ -194,7 +200,7 @@ export default {
         reffered: this.reffered
       }
       axios
-        .post('/api/users/register', register)
+        .post('/api/auth/register', register)
         .then((res) => {
           console.log(res)
         })

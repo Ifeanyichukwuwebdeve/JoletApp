@@ -14,7 +14,7 @@
           <div class="login-form">
             <h2 class="text-center">Log in</h2>
             <div class="login-line"></div>
-            <form action="" v-on:submit.prevent="onSubmit" class="container">
+            <form @submit.prevent="onSubmit" class="container">
               <div class="form-group">
                 <label for="">Email</label>
                 <input
@@ -73,34 +73,50 @@
 </template>
 
 <script>
-// import router from "../router";
-// import axios from "axios";
+// import router from "../router"
+import axios from 'axios'
 export default {
+  name: 'Login',
   data: function () {
     return {
       errors: [],
-      email: '',
-      password: '',
-      remember: ''
+      email: null,
+      password: null,
+      remember: null
     }
   },
   methods: {
     onSubmit () {
       this.errors = []
+
       if (!this.email) {
-        this.errors.push('Email required.')
+        return this.errors.push('Email is required.')
       } else if (!this.validEmail(this.email)) {
-        this.errors.push('Valid email required.')
+        return this.errors.push('Valid email required.')
       }
       if (!this.password) {
-        this.errors.push('Password required.')
+        return this.errors.push('Password is  required.')
       }
-      if (this.password <= 6) {
-        this.errors.push('Password must exceed 6 characters')
+      if (!this.errors) {
+        return {
+          email: this.email,
+          password: this.password,
+          remember: this.remember
+        }
       }
-      if (!this.errors.length) {
-        return true
+      const login = {
+        email: this.email,
+        password: this.password
       }
+
+      axios
+        .post('/api/auth/login', login)
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

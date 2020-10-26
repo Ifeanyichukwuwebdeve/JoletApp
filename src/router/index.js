@@ -1,77 +1,38 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home'
+import routes from './routes'
+// import actions from '@/store/action'
+import mutations from '@/store/mutations'
+import state from '@/store/state'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/faq',
-    name: 'Faq',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Faq.vue')
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    // route level code-splitting
-    // this generates a separate chunk (login.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
-  },
-  {
-    path: '/signup',
-    name: 'Signup',
-    // route level code-splitting
-    // this generates a separate chunk (signup.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Signup.vue')
-  },
-  {
-    path: '/privacy',
-    name: 'Privacy',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Privacy.vue')
-  },
-  {
-    path: '/terms',
-    name: 'Terms',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Terms.vue')
-  },
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Dashboard.vue')
-  },
-  {
-    path: '/quiz',
-    name: 'Questions',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Questions.vue')
-  }
-]
+
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  // base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach(async (to, from, next) => {
+  // if (to.matched.some(record => record.meta.requiresAuth)) {
+  //   if (await actions.getAuthUser()) { // if logged in
+  //     next()
+  //   } else { // not logged in
+  //     next({
+  //       path: '/login',
+  //       params: { nextUrl: to.fullPath }
+  //     })
+  //   }
+  // } else {
+  next()
+  // }
+})
+
+router.afterEach((to, from) => {
+  // turn off spinner
+  mutations.updateLoadingStatus(state, false)
 })
 
 export default router
