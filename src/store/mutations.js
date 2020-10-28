@@ -1,4 +1,4 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 
 export default {
   updateSelectedCurriculum (state, curriculum) {
@@ -63,12 +63,12 @@ export default {
 
       const { name, url, isCompleted } = body
 
-      let updatedItem = {}
+      const updatedItem = {}
       if (name) updatedItem.name = name
       if (url) updatedItem.url = url
       if (isCompleted) updatedItem.isCompleted = isCompleted
 
-      let item = {
+      const item = {
         ...state.curricula[cIndex].sections[sIndex][type][iIndex],
         ...updatedItem
       }
@@ -78,7 +78,7 @@ export default {
     }
   },
   removeItem (state, payload) {
-    const { curriculumId, sectionId, type, body } = payload
+    const { curriculumId, sectionId, type } = payload
     const cIndex = state.curricula.findIndex((obj) => {
       return obj._id === curriculumId
     })

@@ -28,7 +28,7 @@
     <!-- Story Section -->
     <section class="story-section">
       <div class="auto-container">
-        <div class="row clearfix">
+        <div class="row justify-content-center">
           <!-- Content Column -->
           <div class="content-column col-lg-9 col-md-12 col-sm-12">
             <div class="inner-column">
@@ -192,6 +192,10 @@
                   through the site whether or not in connection with an Offer or
                   Discount, in addition to agreeing to these Terms of Use, you
                   are agreeing to the Terms of Sale, available here.
+                </p>
+                <p><strong>Contact information</strong></p>
+                <p>
+                  Questions about these Terms should be sent to us at: hello@joletquiz.com
                 </p>
               </div>
               <div></div>

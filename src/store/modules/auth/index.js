@@ -1,7 +1,7 @@
 import axios from '../../axiosConfig'
 
 import router from '../../../router'
-
+// axios.defaults.headers.common.Authorization = `Bearer ${data.token}`
 export default {
   namespaced: true,
   state: {
@@ -10,19 +10,17 @@ export default {
   actions: {
     async login ({ commit }, payload) {
       try {
-        commit('updateLoadingStatus', true, { root: true })
-        const res = await axios.post(
-          `auth/login`,
-          payload
-        )
-        localStorage.setItem('token', res.data.token)
-        commit('updateUser', res.data)
-
-        // have to set this here or else it will be undefined
-        // on initial api requests
-        axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`
-        router.replace('/curricula')
-        commit('updateLoadingStatus', false, { root: true })
+        // commit('updateLoadingStatus', true, { root: true })
+        await axios.post('auth/login', payload)
+          .then(res => {
+            localStorage.setItem('token', res.data.token)
+            commit('updateUser', res.data)
+            // have to set this here or else it will be undefined
+            // on initial api requests
+            axios.defaults.headers.common.Authorization = `Bearer ${res.data.token}`
+            router.replace('/dashboard')
+            // commit('updateLoadingStatus', false, { root: true })
+          })
       } catch (err) {
         console.error(err)
         const snackbar = {
@@ -36,9 +34,10 @@ export default {
     },
     async register ({ commit }, payload) {
       const res = await axios.post(
-        `auth/register`,
+        'auth/register',
         payload
       )
+      console.log(res)
       commit('updateUser', { email: payload.email })
 
       const snackbar = {
@@ -52,9 +51,10 @@ export default {
     async verify ({ commit }, payload) {
       try {
         const res = await axios.post(
-          `auth/verify`,
+          'auth/verify',
           payload
         )
+        console.log(res)
         router.replace('/login')
       } catch (err) {
         const snackbar = {

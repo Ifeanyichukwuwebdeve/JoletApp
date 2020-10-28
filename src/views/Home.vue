@@ -8,12 +8,12 @@
             <div class="row">
               <div class="col-12 col-sm-6 col-lg-6 order-4 order-sm-4">
                 <div class="content-box">
-                  <h2>Earn with your knowledge</h2>
+                  <h1>Online Quiz Platform</h1>
                   <div class="text">
                     <p>
-                      We are inspired by love for the people which led to all
-                      our humanitarian activities both in cash and kind gifts
-                      towards improving lives and economic upliftment.
+                      Jolet Empire is an online quiz platform where
+                      users earn money through answeing the questions
+                      provided correctly.
                     </p>
                     <div class="btns-box">
                       <a href="" class="theme-btn btn-style-one"
@@ -26,7 +26,7 @@
               <div class="col-12 col-sm-6 col-lg-6 order-2 order-sm-6">
                 <div class="image-column">
                   <div class="image">
-                    <img src="@/assets/img/intro.png" alt="Image" />
+                    <img src="/img/hero.jpg" alt="Image" />
                   </div>
                 </div>
               </div>
@@ -37,79 +37,62 @@
     </section>
     <!-- End of Background -->
 
-    <section class="started-section">
+    <section class="started-section text-left">
       <div class="auto-container">
         <!-- Sec Title -->
-        <div class="sec-title-three text-center">
-          <h2>Get Started</h2>
+        <div class="sec-title-header pb-2">
+          <h2>Get Started. It's easy & fast.</h2>
         </div>
 
-        <div class="row clearfix justify-content-center">
+        <div class="container">
+          <div class="row clearfix justify-content-center">
           <!-- started Block -->
-          <div class="started-block col-lg-4 col-md-6 col-sm-12">
-            <div
-              class="inner-box wow fadeInRight"
-              data-wow-delay="0ms"
-              data-wow-duration="1500ms"
-            >
+          <div class="started-block col-lg-4 col-md-6 col-sm-12 text-left">
               <div class="lower-content">
-                <div class="icon-box">
+                <div class="started-icons">
                   <i class="fas fa-lock"></i>
                 </div>
-                <h2 class="h2a">Create an account</h2>
+                <h2 class="h2a">Create account</h2>
                 <h3>
                   <div class="text">
-                    Our goals are philontropic and aim to improve the quality of
-                    life for the community and beyond.
+                    Sign-up online fo free with you email and get verified.
                   </div>
                 </h3>
               </div>
-            </div>
           </div>
 
           <!-- started Block -->
-          <div class="started-block col-lg-4 col-md-6 col-sm-12">
-            <div
-              class="inner-box wow fadeInRight"
-              data-wow-delay="0ms"
-              data-wow-duration="1500ms"
-            >
+          <div class="started-block col-lg-4 col-md-6 col-sm-12 text-left">
               <div class="lower-content">
-                <div class="icon-box">
+                <div class="started-icons">
                   <i class="fas fa-question-circle"></i>
                 </div>
-                <h2 class="h2a">Answer quiz</h2>
+                <h2 class="h2a">Answer questions</h2>
                 <h3>
                   <div class="text">
-                    Our goals are philontropic and aim to improve the quality of
-                    life for the community and beyond.
+                    Start answering questions through
+                    your dasboard which is time based.
                   </div>
                 </h3>
               </div>
-            </div>
           </div>
 
           <!-- started Block -->
-          <div class="started-block col-lg-4 col-md-6 col-sm-12">
-            <div
-              class="inner-box wow fadeInRight"
-              data-wow-delay="0ms"
-              data-wow-duration="1500ms"
-            >
+          <div class="started-block col-lg-4 col-md-6 col-sm-12 text-left">
               <div class="lower-content">
-                <div class="icon-box">
+                <div class="started-icons">
                   <i class="fas fa-money-bill"></i>
                 </div>
                 <h2 class="h2a">Start earning</h2>
                 <h3>
                   <div class="text">
-                    Our goals are philontropic and aim to improve the quality of
-                    life for the community and beyond.
+                    More of the questions you answer correctly,
+                    more money you earn.
                   </div>
                 </h3>
               </div>
-            </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -119,69 +102,43 @@
       <div class="auto-container">
         <!-- Sec Title -->
         <div class="sec-title-two centered">
-          <h2 id="how-it-works">How It Works</h2>
-          <div class="title-text2">What our beneficieries say about us.</div>
+          <h2 class="beneficieries">How it works</h2>
+          <p class="beneficieries">Somethings you need to know to get started.</p>
         </div>
 
         <div class="row">
           <div class="col-12 col-sm-12 col-lg-12">
-            <div class="row">
-              <div class="col-12 col-sm-8 col-lg-7">
+            <div class="row justify-content-between">
+              <div class="col-12 col-sm-4 col-lg-5 how-it-works-cols">
                 <div class="row">
-                  <div class="col-12 col-sm-6 col-lg-6 works-text-content">
+                  <div class="col-12 col-sm-12 col-lg-12 works-text-content">
                     <span class="round">
-                      <img src="@/assets/img/white-logo.png" alt="" />
+                      <img src="/img/check-circle-regular.svg" alt="" />
                     </span>
                     <div class="text-content">
-                      <h4>Manage your portfolio</h4>
+                      <h4>Time based questions</h4>
                       <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Voluptas autem totam beatae!
+                        Everey question is time based which means that you have to answer the question povided
+                        before your time runs out, if not it will be considered as a failed question.
                       </p>
                     </div>
                   </div>
 
-                  <div class="col-12 col-sm-6 col-lg-6 works-text-content">
+                  <div class="col-12 col-sm-12 col-lg-12 works-text-content">
                     <span class="round">
-                      <img src="@/assets/img/white-logo.png" alt="" />
+                      <img src="/img/check-circle-regular.svg" alt="" />
                     </span>
                     <div class="text-content">
-                      <h4>Manage your portfolio</h4>
+                      <h4>Jolet Points</h4>
                       <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Voluptas autem totam beatae!
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="col-12 col-sm-6 col-lg-6 works-text-content">
-                    <span class="round">
-                      <img src="@/assets/img/white-logo.png" alt="" />
-                    </span>
-                    <div class="text-content">
-                      <h4>Manage your portfolio</h4>
-                      <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Voluptas autem totam beatae!
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="col-12 col-sm-6 col-lg-6 works-text-content">
-                    <span class="round">
-                      <img src="@/assets/img/white-logo.png" alt="" />
-                    </span>
-                    <div class="text-content">
-                      <h4>Manage your portfolio</h4>
-                      <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Voluptas autem totam beatae!
+                        Every question answered correctly amount to Jolet points which determines the amount
+                        you earn. So, the more your Jolet points, the more you earn.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-sm-4 col-lg-5 works-image">
+              <div class="col-12 col-sm-8 col-lg-7 works-image text-center">
                 <img src="@/assets/img/intro.png" alt="" />
               </div>
             </div>
@@ -192,9 +149,9 @@
     <!-- End works Section -->
     <section class="call-to-action-section">
       <div class="auto-container">
-        <h2>Visitor Registration and Management Made Incredibly Easy</h2>
+        <h2>Contact Us</h2>
         <div class="text">
-          <p class="text2">Jolet Empire, Port Harcourt, Nigeria</p>
+          <p class="text2">We're here to help with any question.</p>
           <p class="text2">
             Phone: 0908 234 0000 <br />Email: hello@joletquiz.com
           </p>
@@ -261,7 +218,30 @@ export default {
 </script>
 
 <style scoped>
-.icon-box {
+.started-icons {
   color: #fff;
+}
+.h2a{
+  color: #fff;
+}
+h2{
+    color: #fff !important;
+}
+h1{
+  color: #000 !important;
+}
+.beneficieries{
+  color: #000 !important;
+  margin-bottom: 0px !important;
+  font-weight: 500 !important;
+}
+
+.how-it-works-cols{
+    position: relative;
+    top: 77px;
+}
+
+.sec-title-header h2{
+    color: #000 !important;
 }
 </style>

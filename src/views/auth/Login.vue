@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="image">
     <div class="container error-div">
       <li class="alert alert-danger text-center" v-for="error in errors" :key="error">
         {{error}}
@@ -9,7 +9,7 @@
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 login_container">
           <div class="contain-image text-center">
-            <img src="img/logo.png" alt="" class="text-center" />
+            <img src="img/account-logo-wht.png" alt="" class="text-center" />
           </div>
           <div class="login-form">
             <h2 class="text-center">Log in</h2>
@@ -73,8 +73,9 @@
 </template>
 
 <script>
-// import router from "../router"
-import axios from 'axios'
+// import router from '@/router/index.js'
+// import axios from 'axios'
+import { mapActions } from 'vuex'
 export default {
   name: 'Login',
   data: function () {
@@ -82,10 +83,12 @@ export default {
       errors: [],
       email: null,
       password: null,
-      remember: null
+      remember: null,
+      image: { backgroundImage: 'url(img/bg_forall.svg)' }
     }
   },
   methods: {
+    ...mapActions('auth', ['login']),
     onSubmit () {
       this.errors = []
 
@@ -104,19 +107,20 @@ export default {
           remember: this.remember
         }
       }
-      const login = {
+      const payload = {
         email: this.email,
         password: this.password
       }
-
-      axios
-        .post('/api/auth/login', login)
-        .then((res) => {
-          console.log(res)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
+      // axios.post('/api/login', payload)
+      //   .then((response) => {
+      //     console.log('Logged in')
+      //     router.push('/dashboard')
+      //   })
+      //   .catch((errors) => {
+      //     console.log('Cannot login')
+      //     router.push('/dashboard')
+      //   })
+      this.login(payload)
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -129,5 +133,15 @@ export default {
 <style scoped>
 .alert-danger{
   color: #fff !important;
+}
+div{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login_container{
+  margin-top: 24px;
+  margin-bottom: 106px;
 }
 </style>

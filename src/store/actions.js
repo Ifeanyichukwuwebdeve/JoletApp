@@ -18,7 +18,7 @@ export default {
       res = await axios.get(`curricula?page=${currentPage}`)
     }
 
-    let meta = { ...res.data }
+    const meta = { ...res.data }
     delete meta.docs
     commit('setCurriculaMeta', meta)
     if (currentPage === 1) {
@@ -37,7 +37,7 @@ export default {
   },
   async patchCurriculum ({ commit }, payload) {
     const { curriculumId, body } = payload
-    const res = await axios.patch(`curricula/${curriculumId}`, body)
+    // const res = await axios.patch(`curricula/${curriculumId}`, body)
     // commit('updateCurriculum', payload)
   },
   async deleteCurriculum ({ commit }, curriculumId) {
@@ -51,7 +51,7 @@ export default {
       `curricula/${curriculumId}/sections`,
       body
     )
-    let updatedPayload = { ...payload }
+    const updatedPayload = { ...payload }
     updatedPayload.body = res.data
     commit('updateSection', updatedPayload)
   },
@@ -64,6 +64,7 @@ export default {
       `curricula/${curriculumId}/sections/${section._id}`,
       { goal: section.goal, name: section.name }
     )
+    console.log(res)
     // commit('upsertSection', section)
   },
   async deleteSection ({ commit }, payload) {

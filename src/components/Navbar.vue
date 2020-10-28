@@ -41,23 +41,13 @@
                   id="navbarSupportedContent"
                 >
                   <ul class="navigation clearfix">
-                    <li class="current dropdown">
-                      <a href="#"><router-link to="/">Home</router-link></a>
-                    </li>
-                    <li class="dropdown">
-                      <a class="smoothscroll" href="#how-it-works">About</a>
-                    </li>
-
-                    <li class="dropdown">
-                      <a href="#"><router-link to="/faq">FAQ</router-link></a>
-                    </li>
                     <li class="dropdown">
                       <a href="#"
                         ><router-link to="/login">Login</router-link></a
                       >
                     </li>
 
-                    <li class="dropdown">
+                    <li class="dropdown anchor">
                       <a href="#"
                         ><router-link to="/signup">Signup</router-link></a
                       >
@@ -144,4 +134,11 @@ export default {
 </script>
 
 <style>
+/* .anchor{
+    margin-top: 10px;
+    background-color: #001fb0;
+    padding: 10px !important;
+    color: #fff !important;
+    border-radius: 10px;
+} */
 </style>

@@ -8,9 +8,8 @@
           <div class="row">
             <div class="col-12 col-sm-10 col-lg-10">
               <div class="menu">
-                <a href="#">About Us</a> ·
-                <a href="#"><router-link to="/privacy">Privacy Policy</router-link></a> ·
-                <a href="#"><router-link to="/terms">Terms</router-link></a> · <a href="#"><router-link to="/faq">FAQ</router-link></a>
+                <a href="#"><router-link to="/terms">Terms of use</router-link></a> /
+                <a href="#"><router-link to="/privacy">Privacy Policy</router-link></a> / <a href="#"><router-link to="/faq">FAQ</router-link></a>
               </div>
             </div>
             <div class="col-12 col-sm-2 col-lg-2">
@@ -40,7 +39,7 @@
         <div class="footer-bottom clearfix">
           <div class="pull-left">
             <div class="copyright">
-              &copy; 2020 Jolet Empire. All Rights Reserved.
+              2020 &copy; Jolet Quiz. Powered by Jolet Empire.
             </div>
           </div>
         </div>

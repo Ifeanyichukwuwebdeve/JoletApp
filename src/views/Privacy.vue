@@ -28,7 +28,7 @@
     <!-- Story Section -->
     <section class="story-section">
       <div class="auto-container">
-        <div class="row clearfix">
+        <div class="row justify-content-center">
           <!-- Content Column -->
           <div class="content-column col-lg-9 col-md-12 col-sm-12">
             <div class="inner-column">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="image">
     <div class="container error-div">
       <li class="alert alert-danger text-center" v-for="error in errors" :key="error">
         {{error}}
@@ -9,7 +9,7 @@
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-7 login_container">
           <div class="contain-image text-center">
-            <img src="img/logo.png" alt="" class="text-center" />
+            <img src="img/account-logo-wht.png" alt="" class="text-center" />
           </div>
           <div class="login-form">
             <h2 class="text-center">Sign up to continue</h2>
@@ -128,8 +128,9 @@
 </template>
 
 <script>
-// import router from '../router'
+import router from '@/router/index.js'
 import axios from 'axios'
+// import { mapActions } from 'vuex'
 export default {
   name: 'Signup',
   data: function () {
@@ -142,10 +143,12 @@ export default {
       passwordRepeat: null,
       country: 'Nigeria',
       phone: null,
-      reffered: 'Nobody'
+      reffered: 'Nobody',
+      image: { backgroundImage: 'url(img/bg_forall.svg)' }
     }
   },
   methods: {
+    // ...mapActions('auth', ['register']),
     onSubmit () {
       this.errors = []
 
@@ -190,7 +193,7 @@ export default {
         }
       }
 
-      const register = {
+      const payload = {
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
@@ -199,14 +202,16 @@ export default {
         phone: this.phone,
         reffered: this.reffered
       }
-      axios
-        .post('/api/auth/register', register)
-        .then((res) => {
-          console.log(res)
+      axios.post('/api/register', payload)
+        .then((response) => {
+          console.log('Registered in')
+          router.push('/login')
         })
-        .catch((err) => {
-          console.log(err)
+        .catch((errors) => {
+          console.log('Cannot login')
+          router.push('/login')
         })
+      // this.register(payload)
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -216,8 +221,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .alert-danger{
   color: #fff !important;
+}
+div{
+  background-position: center;
+  background-repeat: no-repeat;
 }
 </style>

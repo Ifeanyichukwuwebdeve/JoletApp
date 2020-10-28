@@ -1,9 +1,10 @@
 import axios from 'axios'
 // import router from '../router'
 
-axios.defaults.baseURL = `${process.env.VUE_APP_API_URL}/api/v1`
-const token = localStorage.getItem('token')
-axios.defaults.headers.common['Authorization'] = token ? `Bearer ${token}` : ''
+// axios.defaults.baseURL = `${process.env.VUE_APP_API_URL}/api/`
+axios.defaults.baseURL = '/api/'
+const token = localStorage.getItem ('token')
+axios.defaults.headers.common.Authorization = token ? `Bearer ${token}` : ''
 
 axios.interceptors.response.use(function (response) {
   return response

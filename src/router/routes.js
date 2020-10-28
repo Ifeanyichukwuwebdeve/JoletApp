@@ -1,4 +1,6 @@
 import Home from '@/views/Home'
+import Login from '@/views/auth/Login.vue'
+import Sign from '@/views/auth/Signup.vue'
 
 export default [
   {
@@ -17,18 +19,12 @@ export default [
   {
     path: '/login',
     name: 'Login',
-    // route level code-splitting
-    // this generates a separate chunk (login.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    component: Login
   },
   {
     path: '/signup',
     name: 'Signup',
-    // route level code-splitting
-    // this generates a separate chunk (signup.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Signup.vue')
+    component: Sign
   },
   {
     path: '/privacy',
