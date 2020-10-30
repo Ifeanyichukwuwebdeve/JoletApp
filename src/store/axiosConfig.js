@@ -3,7 +3,7 @@ import axios from 'axios'
 
 // axios.defaults.baseURL = `${process.env.VUE_APP_API_URL}/api/`
 axios.defaults.baseURL = '/api/'
-const token = localStorage.getItem ('token')
+const token = localStorage.getItem('token')
 axios.defaults.headers.common.Authorization = token ? `Bearer ${token}` : ''
 
 axios.interceptors.response.use(function (response) {

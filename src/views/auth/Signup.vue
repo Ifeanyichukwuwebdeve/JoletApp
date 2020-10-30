@@ -128,9 +128,9 @@
 </template>
 
 <script>
-import router from '@/router/index.js'
-import axios from 'axios'
-// import { mapActions } from 'vuex'
+// import router from '@/router/index.js'
+// import axios from 'axios'
+import { mapActions } from 'vuex'
 export default {
   name: 'Signup',
   data: function () {
@@ -148,7 +148,7 @@ export default {
     }
   },
   methods: {
-    // ...mapActions('auth', ['register']),
+    ...mapActions('auth', ['register']),
     onSubmit () {
       this.errors = []
 
@@ -202,16 +202,16 @@ export default {
         phone: this.phone,
         reffered: this.reffered
       }
-      axios.post('/api/register', payload)
-        .then((response) => {
-          console.log('Registered in')
-          router.push('/login')
-        })
-        .catch((errors) => {
-          console.log('Cannot login')
-          router.push('/login')
-        })
-      // this.register(payload)
+      // axios.post('/api/register', payload)
+      //   .then((response) => {
+      //     console.log('Registered in')
+      //     router.push('/login')
+      //   })
+      //   .catch((errors) => {
+      //     console.log('Cannot login')
+      //     router.push('/login')
+      //   })
+      this.register(payload)
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

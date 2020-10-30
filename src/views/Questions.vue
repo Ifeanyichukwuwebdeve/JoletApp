@@ -1,6 +1,9 @@
 <template>
   <div>
-    <QuestionHeader />
+    <QuestionHeader
+      :numCorrect="numCorrect"
+      :numTotal="numTotal"
+    />
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-8">
@@ -8,6 +11,7 @@
             v-if="questions.length"
             :currentQuestion="questions[index]"
             :next="next"
+            :increment="increment"
            />
         </div>
       </div>
@@ -27,16 +31,24 @@ export default {
   data () {
     return {
       questions: [],
-      index: 0
+      index: 0,
+      numCorrect: 0,
+      numTotal: 0
     }
   },
   methods: {
     next () {
       this.index++
+    },
+    increment (isCorrect) {
+      if (isCorrect) {
+        this.numCorrect++
+      }
+      this.numTotal++
     }
   },
   mounted: function () {
-    fetch('https://opentdb.com/api.php?amount=10&category=27&type=multiple', {
+    fetch('https://opentdb.com/api.php?amount=50', {
       method: 'get'
     })
       .then(response => {
@@ -44,6 +56,9 @@ export default {
       })
       .then(jsonData => {
         this.questions = jsonData.results
+      })
+      .catch(err => {
+        console.log(err)
       })
   }
 }
