@@ -5,9 +5,9 @@
         <button class="btn-menu ls-toggle-btn" type="button">
           <i class="zmdi zmdi-menu"></i>
         </button>
-        <a href="index.html"
-          ><img src="img/logo.png" width="25" alt="jolet"
-        /></a>
+        <router-link to="/"
+          ><img src="img/account-logo-wht.png" width="25" alt="jolet"
+        /></router-link>
       </div>
       <div class="menu">
         <ul class="list">

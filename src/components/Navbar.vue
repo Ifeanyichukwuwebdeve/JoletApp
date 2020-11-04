@@ -8,7 +8,7 @@
             <!--Info-->
             <div class="logo-outer">
               <div class="logo">
-                <a href="index.html"
+                <a href="#"
                   ><img src="img/logo.png" alt="Jolet Empire Logo"
                 /></a>
               </div>
@@ -18,7 +18,7 @@
             <div class="nav-outer clearfix">
               <!--Mobile Navigation Toggler For Mobile-->
               <div class="mobile-nav-toggler">
-                <span class="icon flaticon-menu-1"></span>
+                <span @click="$bvModal.show('bv-modal-example')"  class="icon flaticon-menu-1"></span>
               </div>
               <nav class="main-menu navbar-expand-md navbar-light">
                 <div class="navbar-header">
@@ -32,15 +32,47 @@
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                   >
-                    <span @click="onLoad" class="icon flaticon-menu-1"></span>
+                    <span id="show-btn" class="icon flaticon-menu-1"></span>
                   </button>
                 </div>
+                <!-- Mobile -->
+                <b-modal id="bv-modal-example" class="text-center" hide-footer>
+                  <template #modal-title>
+                  </template>
+                  <div class="d-block text-center">
+                    <nav class="menu-box">
+                      <ul class="navigation clearfix">
+                      <li class="dropdown">
+                      <a href="#"
+                        ><router-link to="/">Home</router-link></a
+                      >
+                    </li>
+                    <li class="dropdown">
+                      <a href="#"
+                        ><router-link to="/login">Login</router-link></a
+                      >
+                    </li>
 
+                    <li class="dropdown anchor">
+                      <a href="#"
+                        ><router-link to="/signup">Signup</router-link></a
+                      >
+                    </li>
+                  </ul>
+                    </nav>
+                  </div>
+                </b-modal>
+                <!-- Nav -->
                 <div
                   class="collapse navbar-collapse clearfix"
                   id="navbarSupportedContent"
                 >
                   <ul class="navigation clearfix">
+                    <li class="dropdown">
+                      <a href="#"
+                        ><router-link to="/">Home</router-link></a
+                      >
+                    </li>
                     <li class="dropdown">
                       <a href="#"
                         ><router-link to="/login">Login</router-link></a
@@ -61,26 +93,6 @@
         </div>
       </div>
       <!--End Header Upper-->
-
-      <!-- Mobile Menu  -->
-      <div class="mobile-menu">
-        <div class="menu-backdrop"></div>
-        <div class="close-btn">
-          <span class="icon flaticon-cancel"></span>
-        </div>
-
-        <nav class="menu-box">
-          <div class="nav-logo">
-            <a href="index.html"
-              ><img src="img/logo.png" alt="Jolet Empire Logo" title=""
-            /></a>
-          </div>
-          <ul class="navigation clearfix">
-            <!--Keep This Empty / Menu will come through Javascript-->
-          </ul>
-        </nav>
-      </div>
-      <!-- End Mobile Menu -->
     </header>
     <!-- End Main Header -->
   </div>
@@ -88,57 +100,13 @@
 
 <script>
 export default {
-  name: 'Navbar',
-  methods: {
-    onLoad () {
-      (function ($) {
-        'use strict'
-        // Mobile Nav Hide Show
-        if ($('.mobile-menu').length) {
-          $('.mobile-menu .menu-box').mCustomScrollbar()
-
-          var mobileMenuContent = $(
-            '.main-header .nav-outer .main-menu .navigation'
-          ).html()
-          $('.mobile-menu .navigation').append(mobileMenuContent)
-          $('.sticky-header .navigation').append(mobileMenuContent)
-          $('.mobile-menu .close-btn').on('click', function () {
-            $('body').removeClass('mobile-menu-visible')
-          })
-          // Dropdown Button
-          $('.mobile-menu li.dropdown .dropdown-btn').on('click', function () {
-            $(this).toggleClass('open')
-            $(this).prev('ul').slideToggle(500)
-          })
-          // Menu Toggle Btn
-          $('.mobile-nav-toggler').on('click', function () {
-            $('body').addClass('mobile-menu-visible')
-          })
-          $(document).keydown(function (e) {
-            if (e.keyCode === 27) {
-              $('body').removeClass('mobile-menu-visible')
-            }
-          })
-          // Menu Toggle Btn
-          $('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on(
-            'click',
-            function () {
-              $('body').removeClass('mobile-menu-visible')
-            }
-          )
-        }
-      })(window.jQuery)
-    }
-  }
+  name: 'Navbar'
 }
 </script>
 
 <style>
-/* .anchor{
-    margin-top: 10px;
-    background-color: #001fb0;
-    padding: 10px !important;
-    color: #fff !important;
-    border-radius: 10px;
-} */
+.nav-logo img{
+  width: 50px;
+  width: 122px;
+}
 </style>

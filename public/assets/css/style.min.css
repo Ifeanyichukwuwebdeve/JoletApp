@@ -1334,9 +1334,15 @@ h5,
 
 h6,
 .h6 {
-  font-size: .9em;
+  font-size: 0.em;
   font-weight: 700;
-  text-transform: uppercase
+  text-transform: uppercase;
+  color: #33519a;
+}
+
+.play-btn{
+  background: #33519a;
+  color: #fff;
 }
 
 p {
@@ -3241,7 +3247,8 @@ img {
 }
 
 .zmdi-home:before {
-  content: '\f175'
+  content: '\f175';
+  color: #fff !important;
 }
 
 .zmdi-hospital-alt:before {
@@ -3377,7 +3384,8 @@ img {
 }
 
 .zmdi-menu:before {
-  content: '\f197'
+  content: '\f197';
+  color: #fff;
 }
 
 .zmdi-money-box:before {
@@ -3473,7 +3481,8 @@ img {
 }
 
 .zmdi-power:before {
-  content: '\f1af'
+  content: '\f1af';
+  color: #33519a;
 }
 
 .zmdi-print:before {
@@ -3789,7 +3798,8 @@ img {
 }
 
 .zmdi-notifications:before {
-  content: '\f1fe'
+  content: '\f1fe';
+  color: #33519a;
 }
 
 .zmdi-account-add:before {
@@ -4897,7 +4907,8 @@ img {
 }
 
 .zmdi-apps:before {
-  content: '\f313'
+  content: '\f313';
+  color: #fff;
 }
 
 .zmdi-grid-off:before {
@@ -5929,7 +5940,8 @@ img {
 }
 
 .zmdi-assignment:before {
-  content: '\f10c'
+  content: '\f10c';
+  color: #fff;
 }
 
 .zmdi-attachment-alt:before {
@@ -6673,7 +6685,8 @@ img {
 }
 
 .zmdi-settings:before {
-  content: '\f1c6'
+  content: '\f1c6';
+  color: #33519a;
 }
 
 .zmdi-shield-check:before {
@@ -10894,13 +10907,11 @@ section.content {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
+  background-color: #fff;
   border-radius: 10px;
-  background: #f5f5f5;
-  border: 5px solid #fff;
   padding: 10px;
   position: relative;
   margin: 20px 70px 20px 260px;
-  box-shadow: 0 0 16px rgba(41, 42, 51, 0.06), 0 6px 20px rgba(41, 42, 51, 0.02)
 }
 
 .ls-toggle-menu .slimScrollDiv {
@@ -12837,7 +12848,7 @@ section.content {
 
 .navbar-brand span {
   font-size: 16px;
-  color: #444
+  color: #fff
 }
 
 .sidebar {
@@ -12852,6 +12863,7 @@ section.content {
   top: 0;
   left: 0;
   box-shadow: none;
+  background-color: #33519a;
   z-index: 10
 }
 
@@ -12902,7 +12914,8 @@ section.content {
 }
 
 .sidebar .menu .list li.active>:first-child span {
-  font-weight: 700
+  font-weight: 700;
+  color: #fff;
 }
 
 .sidebar .menu .list .menu-toggle:after,
@@ -12925,6 +12938,7 @@ section.content {
 
 .sidebar .menu .list .menu-toggle:before {
   content: '\f2fb';
+  color: #fff;
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
@@ -13001,7 +13015,8 @@ section.content {
 }
 
 .sidebar .menu .list a span {
-  margin: 0 0 0 12px
+  margin: 0 0 0 12px;
+  color: #fff;
 }
 
 .sidebar .menu .list .ml-menu {
@@ -14922,7 +14937,7 @@ section.content {
 
 .font-12,
 .block-header h2 small {
-  font-size: 12px
+  font-size: 12px;
 }
 
 .font-13 {
@@ -15096,7 +15111,8 @@ section.content {
 .block-header h2 {
   font-size: 22px;
   margin: 0 !important;
-  font-weight: 700
+  font-weight: 700;
+  color: #33519a !important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -15972,7 +15988,9 @@ section.content {
   background: #fff;
   font-size: 14px;
   color: #222;
-  padding: 20px
+  padding: 20px;
+  height: 184px;
+  border: 1px solid #33519a;
 }
 
 @media only screen and (max-width: 767px) {
@@ -21631,20 +21649,6 @@ section.content {
   color: #74ade2
 }
 
-.theme-dark .h1,
-.theme-dark .h2,
-.theme-dark .h3,
-.theme-dark .h4,
-.theme-dark .h5,
-.theme-dark .h6,
-.theme-dark h1,
-.theme-dark h2,
-.theme-dark h3,
-.theme-dark h4,
-.theme-dark h5,
-.theme-dark h6 {
-  color: #c7c2c2
-}
 
 .theme-dark hr {
   border-color: #3e3e3e

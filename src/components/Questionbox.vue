@@ -92,6 +92,9 @@ export default {
       }
       return answerClass
     }
+    // next () {
+    //   setTimeout
+    // }
   }
 }
 </script>
@@ -110,10 +113,10 @@ export default {
 }
 
 .correct{
-  background-color: #69ec69 !important;
+  background-color: #FFF !important;
 }
 
 .incorrect{
-  background-color: red !important;
+  background-color: #fff !important;
 }
 </style>

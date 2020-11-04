@@ -11,7 +11,7 @@
                   <h1>Online Quiz Platform</h1>
                   <div class="text">
                     <p>
-                      Jolet Empire is an online quiz platform where
+                      Jolet Quiz is an online quiz platform where
                       users earn money through answeing the questions
                       provided correctly.
                     </p>
@@ -173,46 +173,6 @@ export default {
   components: {
     Navbar,
     Footer
-  },
-  methods: {
-    mobile: (($) => {
-      'use strict'
-
-      // Mobile Nav Hide Show
-      if ($('.mobile-menu').length) {
-        $('.mobile-menu .menu-box').mCustomScrollbar()
-
-        var mobileMenuContent = $(
-          '.main-header .nav-outer .main-menu .navigation'
-        ).html()
-        $('.mobile-menu .navigation').append(mobileMenuContent)
-        $('.sticky-header .navigation').append(mobileMenuContent)
-        $('.mobile-menu .close-btn').on('click', function () {
-          $('body').removeClass('mobile-menu-visible')
-        })
-        // Dropdown Button
-        $('.mobile-menu li.dropdown .dropdown-btn').on('click', function () {
-          $(this).toggleClass('open')
-          $(this).prev('ul').slideToggle(500)
-        })
-        // Menu Toggle Btn
-        $('.mobile-nav-toggler').on('click', function () {
-          $('body').addClass('mobile-menu-visible')
-        })
-        $(document).keydown(function (e) {
-          if (e.keyCode === 27) {
-            $('body').removeClass('mobile-menu-visible')
-          }
-        })
-        // Menu Toggle Btn
-        $('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on(
-          'click',
-          function () {
-            $('body').removeClass('mobile-menu-visible')
-          }
-        )
-      }
-    })(window.jQuery)
   }
 }
 </script>

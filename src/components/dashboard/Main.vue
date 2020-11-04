@@ -1,20 +1,15 @@
 <template>
   <div>
     <section class="content">
-    <div class="block-header">
+        <div class="block-header">
           <div class="row">
             <div class="col-lg-9 col-md-6 col-sm-12">
-              <h2>Dashboard</h2>
-              <ul class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="/home"><i class="zmdi zmdi-home"></i> Jolet</a>
-                </li>
-              </ul>
-
-              <h2>Level: {{ msg }}</h2>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 mt-5">
-              <a class="btn btn-sucess-outline" href="/quiz">Play Game</a>
+              <div class="container mb-5">
+                <div class="row justify-content-between">
+                  <h2 class="col-lg-8">Dashboard</h2>
+                  <h2 class="col-lg-4">Level: {{ msg }}</h2>
+              </div>
+              </div>
             </div>
           </div>
         </div>
@@ -29,7 +24,7 @@
                   <b-progress
                   :value="value"
                   :max="max"
-                  show-value class="mb-3">
+                  show-value class="mt-4">
                   </b-progress>
                   </div>
                 </div>
@@ -40,19 +35,17 @@
                   <h6>Jolet cions earned</h6>
                   <h2>8 <small class="info">of 10</small></h2>
                   <small>Total coins</small>
-                  <div class="progress">
-                    <div
-                      class="progress-bar l-green"
-                      role="progressbar"
-                      aria-valuenow="89"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                      style="width: 89%"
-                    ></div>
-                  </div>
+                  <b-progress l-green
+                  :value="value"
+                  :max="max"
+                  show-value class="mt-4">
+                  </b-progress>
                 </div>
               </div>
             </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 play-game">
+              <router-link class="btn play-btn" to="/quiz">Play Game</router-link>
             </div>
         </div>
     </section>
@@ -65,20 +58,24 @@ export default {
   data () {
     return {
       msg: '1',
-      value: 24
+      value: 54,
+      max: 100
     }
   }
 }
 </script>
 
 <style >
-  section.content {
-    border-radius: 0px important;
-    background: #f5f5f5;
-    border: 0px important;
-    padding: 10px;
-    position: relative;
-    margin: 20px 70px 20px 260px;
-    box-shadow: 0px important;
+.play-game a:hover{
+  color: #fff;
+}
+.play-btn{
+  font-size: 15px;
+  background: #33519a;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 </style>

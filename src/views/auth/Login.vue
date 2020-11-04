@@ -1,5 +1,6 @@
 <template>
   <div :style="image">
+    <FlashMessage :position="'right bottom'"></FlashMessage>
     <div class="container error-div">
       <li class="alert alert-danger text-center" v-for="error in errors" :key="error">
         {{error}}
@@ -61,7 +62,7 @@
               <div class="dont-have-account">
                 <p class="text-center">
                   Don't have an account?
-                  <a href="/signup">Sign Up</a>
+                  <router-link to="/signup">Sign Up</router-link>
                 </p>
               </div>
             </form>

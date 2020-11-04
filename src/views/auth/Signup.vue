@@ -71,7 +71,7 @@
                     type="number"
                     class="form-control"
                     v-model="phone"
-                    placeholder="+2347011591439"
+                    placeholder="+234"
                     maxlength="11"
                     required
                   />
@@ -117,7 +117,7 @@
               <button class="btn-submit" type="submit" >Sign up</button>
 
               <div class="dont-have-account text-center">
-                <p>Have an account? <a href="/login">Log in</a></p>
+                <p>Have an account? <router-link to="/login">Log in</router-link></p>
               </div>
             </form>
           </div>
