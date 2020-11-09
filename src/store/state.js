@@ -1,12 +1,9 @@
 export default {
-  curricula: [],
-  curriculaMeta: {},
+  userGame: [],
   snackbar: {
     show: false,
     variant: 'success',
     message: ''
   },
-  completeCounts: [],
-  selectedCurriculum: {},
   loading: false
 }

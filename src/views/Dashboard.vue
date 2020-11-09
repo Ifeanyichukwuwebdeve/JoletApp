@@ -1,34 +1,27 @@
 <template>
   <div>
-    <!-- Left Sidebar -->
-    <div class="row">
-      <div class="col-12">
-        <SideNav />
-    <!-- Main Content -->
-      </div>
-      <div class="col-12">
-        <TopNav />
-      </div>
-      <div class="col-12">
-        <Main />
-      </div>
+    <TopNav />
+    <div class="wp-content">
+      <Main />
     </div>
+    <BottomNav />
   </div>
 </template>
 
 <script>
-import SideNav from '../components/dashboard/SideNav'
+import BottomNav from '../components/dashboard/BottomNav'
 import Main from '../components/dashboard/Main'
-import TopNav from '../components/dashboard/RightNav'
+import TopNav from '../components/dashboard/TopNav'
 export default {
   name: 'Dashboard',
   components: {
-    SideNav,
+    BottomNav,
     TopNav,
     Main
   }
 }
 </script>
 
-<style>
+<style scoped>
+
 </style>

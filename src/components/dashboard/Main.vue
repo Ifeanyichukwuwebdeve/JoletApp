@@ -1,17 +1,13 @@
 <template>
   <div>
-    <section class="content">
+    <section class="container pt-5 mt-4 main-container">
         <div class="block-header">
-          <div class="row">
-            <div class="col-lg-9 col-md-6 col-sm-12">
               <div class="container mb-5">
                 <div class="row justify-content-between">
-                  <h2 class="col-lg-8">Dashboard</h2>
-                  <h2 class="col-lg-4">Level: {{ msg }}</h2>
+                  <h2 class="col-4">Dashboard</h2>
+                  <h2 class="col-4">Level: {{ msg }}</h2>
               </div>
               </div>
-            </div>
-          </div>
         </div>
         <div class="container-fluid">
           <div class="row">
@@ -19,7 +15,7 @@
               <div class="card widget_2">
                 <div class="body">
                   <h6>Questions answered</h6>
-                  <h2>39 <small class="info">of 100</small></h2>
+                  <h2>{{ answeredQuestions }} <small class="info">of {{ totalQuestions }}</small></h2>
                   <small>Total Questions</small>
                   <b-progress
                   :value="value"
@@ -33,7 +29,7 @@
               <div class="card widget_2">
                 <div class="body">
                   <h6>Jolet cions earned</h6>
-                  <h2>8 <small class="info">of 10</small></h2>
+                  <h2>{{ joletCoin }} <small class="info">N{{ amout }}</small></h2>
                   <small>Total coins</small>
                   <b-progress l-green
                   :value="value"
@@ -58,8 +54,16 @@ export default {
   data () {
     return {
       msg: '1',
-      value: 54,
-      max: 100
+      totalQuestions: 749,
+      answeredQuestions: 50,
+      joletCoin: 20,
+      amout: null
+    }
+  },
+  computed: {
+    calculateProgressBars () {
+      const value = this.answeredQuestions
+      return value
     }
   }
 }
@@ -77,5 +81,16 @@ export default {
   padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.block-header{
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+@media screen and (max-width: 640px){
+  .main-container{
+    margin-bottom: 90px !important;
+  }
 }
 </style>
