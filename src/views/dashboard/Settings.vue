@@ -14,7 +14,7 @@
           <div class="login-form">
             <h2 class="text-center pt-3 pb-3">User Info</h2>
             <div class="login-line"></div>
-            <form @submit.prevent="onSubmit" class="container">
+            <form @submit.prevent="updateUserInfo" class="container">
               <div class="form-row pt-3">
                 <div class="col-12 col-sm-6">
                   <label for="firstname">First Name</label>
@@ -89,13 +89,13 @@
           <div class="login-form">
             <h2 class="text-center pt-3 pb-3">Update Password</h2>
             <div class="login-line"></div>
-            <form @submit.prevent="onSubmit" class="container">
+            <form @submit.prevent="updatepassword" class="container">
               <div class="form-group">
                 <label for="">Old Password</label>
                 <input
                   type="password"
                   name="Password"
-                  v-model.trim="password"
+                  v-model.trim="oldPassword"
                   class="form-control"
                   placeholder="Password"
                   aria-describedby="helpId"
@@ -127,7 +127,7 @@
                 />
               </div>
 
-              <button class="btn-submit">Save</button>
+              <button :disabled="!this.oldPassword || !this.newPassword" class="btn-submit">Save</button>
             </form>
           </div>
         </div>
@@ -139,7 +139,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'Login',
+  name: 'Settings',
   data: function () {
     return {
       errors: [],
@@ -148,7 +148,7 @@ export default {
       country: null,
       phone: null,
       email: null,
-      password: null,
+      oldPassword: null,
       newPassword: null,
       repeatPassword: null,
       remember: null,
@@ -159,7 +159,7 @@ export default {
     ...mapState('auth', ['user'])
   },
   methods: {
-    ...mapActions('auth', ['login']),
+    ...mapActions('user', ['updateUser', 'updateUserPassword']),
     updateUserInfo () {
       this.errors = []
       if (!this.firstName) {
@@ -179,21 +179,48 @@ export default {
       } else if (!this.validEmail(this.email)) {
         return this.errors.push('Valid email required.')
       }
-      if (!this.password) {
-        return this.errors.push('Password is  required.')
-      }
       if (!this.errors) {
         return {
+          firstName: this.firstName,
+          lastName: this.lastName,
           email: this.email,
-          password: this.password,
-          remember: this.remember
+          country: this.country,
+          phone: this.phone
         }
       }
       const payload = {
+        firstName: this.firstName,
+        lastName: this.lastName,
         email: this.email,
-        password: this.password
+        country: this.country,
+        phone: this.phone
       }
-      this.login(payload)
+      this.updateUser(payload)
+      // console.log(payload)
+    },
+    updatepassword () {
+      if (!this.oldPassword) {
+        return this.errors.push('Password is  required.')
+      }
+      if (this.newPassword <= 6) {
+        return this.errors.push('Password must exceed 6 characters')
+      }
+      if (!this.repeatPassword.includes(this.newPassword)) {
+        return this.errors.push('Passwords must match')
+      }
+      if (!this.errors) {
+        return {
+          oldPassword: this.oldPassword,
+          newPassword: this.newPassword
+        }
+      }
+      const payload = {
+        oldPassword: this.oldPassword,
+        newPassword: this.newPassword
+      }
+
+      this.updateUserPassword(payload)
+      // console.log(payload)
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -235,5 +262,8 @@ div{
     font-size: 25px !important;
     color: #001fb0 !important;
     padding: 0px;
+}
+.error-div{
+  position: fixed;
 }
 </style>

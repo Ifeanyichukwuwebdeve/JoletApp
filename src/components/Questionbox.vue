@@ -21,6 +21,11 @@
         :disabled="selectedIndex === null || this.answered"
         >Submit
         </b-button>
+        <b-button
+       variant="primary"
+        @click="next"
+        >Submit
+        </b-button>
     </b-jumbotron>
   </div>
 </template>
@@ -90,10 +95,16 @@ export default {
         answerClass = 'incorrect'
       }
       return answerClass
+    },
+    callFunction () {
+      setTimeout(function () {
+        const next = [...this.next]
+        console.log(next)
+      }, 9000)
     }
-    // next () {
-    //   setTimeout
-    // }
+  },
+  mounted () {
+    this.callFunction()
   }
 }
 </script>

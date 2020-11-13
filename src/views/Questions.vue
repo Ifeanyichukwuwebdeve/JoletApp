@@ -4,6 +4,7 @@
       :numCorrect="numCorrect"
       :numTotal="numTotal"
     />
+    <h1>{{ message }}</h1>
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-8">
@@ -33,7 +34,8 @@ export default {
       questions: [],
       index: 0,
       numCorrect: 0,
-      numTotal: 0
+      numTotal: 0,
+      message: 'Welcome, Please Wait....'
     }
   },
   methods: {
@@ -65,4 +67,7 @@ export default {
 </script>
 
 <style>
+h1{
+  color: #000;
+}
 </style>

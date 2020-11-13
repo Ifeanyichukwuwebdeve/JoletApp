@@ -108,7 +108,7 @@
                         >Log out</a
                       >
                     </li>
-                    <!-- <b-button @click="showAlert" variant="info" class="m-1">
+                    <!-- <b-button @click="showAlert" variant="info">
                       Show alert with count-down timer
                     </b-button> -->
                   </ul>
