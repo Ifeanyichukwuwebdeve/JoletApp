@@ -1,14 +1,14 @@
 <template>
   <div>
     <!-- Top Sidebar -->
-    <div class="container fixed-top">
+    <div class="container fixed-top nav-container">
       <div class="row justify-content-between">
         <div class="col-4 logo ">
           <img src="/img/logo.png">
         </div>
         <div class="col-5 text-center">
           <div class="links">
-            <a href="#" class="home"><i class="fa fa-home mr-3"></i></a>
+            <router-link to="/" class="home"><i class="fa fa-home mr-3"></i></router-link>
             <!-- /.dropdown -->
 
             <div class="d-inline dropdown mr-3 mx-3">
@@ -48,25 +48,10 @@
             <!-- /.dropdown -->
 
             <div class="d-inline dropdown">
-              <a
-                class="dropdown-toggle"
-                id="messages"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                href="#"
-              >
-                <img
-                  src="http://1.gravatar.com/avatar/47db31bd2e0b161008607d84c74305b5?s=96&d=mm&r=g"
-                />
-              </a>
-              <div
-                class="dropdown-menu dropdown-menu-right rounded-0"
-                aria-labelledby="messages"
-              >
-                <a class="dropdown-item" href="#">Edit my profile</a>
-                <a class="dropdown-item" href="#">Log Out</a>
-              </div>
+              <b-dropdown id="dropdown-1" :text="user.firstName" class="m-md-2">
+                <b-dropdown-item @click="logout">Log out</b-dropdown-item>
+            </b-dropdown>
+
               <!-- /.dropdown-menu -->
             </div>
             <!-- /.dropdown -->
@@ -79,20 +64,34 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'TopNav'
+  name: 'TopNav',
+  data () {
+    return {
+    }
+  },
+  computed: {
+    ...mapState('auth', ['user'])
+  },
+  methods: {
+    ...mapActions('auth', ['logUserOut']),
+    logout () {
+      this.logUserOut()
+    }
+  }
 }
 </script>
 
-<style lang="scss">
-.container{
-  background-color: #fff;
-}
+<style lang="scss" scoped>
 .logo img{
   padding-top: 10px;
   width: 150px;
 }
 .links {
   padding-top: 10px;
+}
+.nav-container{
+  background-color: #fff;
 }
 </style>

@@ -5,7 +5,7 @@
               <div class="container mb-5">
                 <div class="row justify-content-between">
                   <h2 class="col-4">Dashboard</h2>
-                  <h2 class="col-4">Level: {{ msg }}</h2>
+                  <h2 class="col-4">Level: {{ level }}</h2>
               </div>
               </div>
         </div>
@@ -29,11 +29,11 @@
               <div class="card widget_2">
                 <div class="body">
                   <h6>Jolet cions earned</h6>
-                  <h2>{{ joletCoin }} <small class="info">N{{ amout }}</small></h2>
+                  <h2>{{ joletCoin }} <small class="info">N{{ amount }}</small></h2>
                   <small>Total coins</small>
                   <b-progress l-green
-                  :value="value"
-                  :max="max"
+                  :joletCoin="joletCoin"
+                  :joletCoinMax="joletCoin"
                   show-value class="mt-4">
                   </b-progress>
                 </div>
@@ -49,22 +49,35 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'Main',
   data () {
     return {
-      msg: '1',
+      level: '1',
+      value: 20,
+      max: 40,
       totalQuestions: 749,
       answeredQuestions: 50,
       joletCoin: 20,
-      amout: null
+      amount: null
     }
   },
   computed: {
-    calculateProgressBars () {
-      const value = this.answeredQuestions
-      return value
+    ...mapState('auth', ['user']),
+    ...mapState(['userGame'])
+  },
+  methods: {
+    ...mapActions(['getUserGame']),
+    getGame () {
+      this.getUserGame(this.user.Game)
     }
+  },
+  mounted () {
+    this.getGame()
+    this.joletCoin = this.userGame.joletCoin
+    this.answeredQuestions = this.userGame.answeredQuestions
+    this.level = this.userGame.level
   }
 }
 </script>

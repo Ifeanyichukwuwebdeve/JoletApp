@@ -19,7 +19,13 @@ export default {
             // on initial api requests
             axios.defaults.headers.common.Authorization = `Bearer ${res.data.token}`
             router.replace('/dashboard')
-            // commit('updateLoadingStatus', false, { root: true })
+            const snackbar = {
+              show: true,
+              variant: 'error',
+              message: 'Login Successful.'
+            }
+            commit('updateSnackbar', snackbar, { root: true })
+            commit('updateLoadingStatus', false, { root: true })
           })
       } catch (err) {
         console.error(err)
@@ -67,6 +73,13 @@ export default {
     },
     async logUserOut ({ commit }, payload) {
       commit('clearUserInfo')
+      const snackbar = {
+        show: true,
+        variant: 'success',
+        message: 'Invalid Code'
+      }
+      commit('removeUserGame', { root: true })
+      commit('updateSnackbar', snackbar, { root: true })
       localStorage.removeItem('token')
       router.replace('/')
     },

@@ -38,8 +38,6 @@
                 <!-- Mobile -->
                 <b-modal id="bv-modal-example" class="text-center" hide-footer>
                   <template #modal-title>
-                  </template>
-                  <div class="d-block text-center">
                     <nav class="menu-box">
                       <ul class="navigation clearfix">
                       <li class="dropdown">
@@ -47,20 +45,33 @@
                         ><router-link to="/">Home</router-link></a
                       >
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown" v-if="!user.token">
                       <a href="#"
                         ><router-link to="/login">Login</router-link></a
                       >
                     </li>
 
-                    <li class="dropdown anchor">
+                    <li class="dropdown anchor" v-if="!user.token">
                       <a href="#"
                         ><router-link to="/signup">Signup</router-link></a
                       >
                     </li>
+
+                    <li class="dropdown anchor" v-if="user.token">
+                      <a href="#"
+                        ><router-link to="/dashboard"><i class="fas fa-user-circle"></i><span>{{user.firstName}}</span></router-link></a
+                      >
+                    </li>
+
+                    <li class="dropdown anchor" v-if="user.token">
+                      <a href="#"
+                      @click="logout"
+                        >Log out</a
+                      >
+                    </li>
                   </ul>
                     </nav>
-                  </div>
+                  </template>
                 </b-modal>
                 <!-- Nav -->
                 <div
@@ -73,19 +84,50 @@
                         ><router-link to="/">Home</router-link></a
                       >
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown" v-if="!user.token">
                       <a href="#"
                         ><router-link to="/login">Login</router-link></a
                       >
                     </li>
 
-                    <li class="dropdown anchor">
+                    <li class="dropdown anchor" v-if="!user.token">
                       <a href="#"
                         ><router-link to="/signup">Signup</router-link></a
                       >
                     </li>
+
+                    <li class="dropdown anchor" v-if="user.token">
+                      <a href="#"
+                        ><router-link to="/dashboard"><i class="fas fa-user-circle"></i><span>{{user.firstName}}</span></router-link></a
+                      >
+                    </li>
+
+                    <li class="dropdown anchor" v-if="user.token">
+                      <a href="#"
+                      @click="logout"
+                        >Log out</a
+                      >
+                    </li>
+                    <!-- <b-button @click="showAlert" variant="info" class="m-1">
+                      Show alert with count-down timer
+                    </b-button> -->
                   </ul>
                 </div>
+                <b-alert
+                  :show="dismissCountDown"
+                  dismissible
+                  variant="danger"
+                  @dismissed="dismissCountDown=0"
+                  @dismiss-count-down="countDownChanged"
+                >
+                  <p>This alert will dismiss after {{ dismissCountDown }} seconds...</p>
+                  <b-progress
+                    variant="warning"
+                    :max="dismissSecs"
+                    :value="dismissCountDown"
+                    height="4px"
+                  ></b-progress>
+                </b-alert>
               </nav>
               <!-- Main Menu End-->
             </div>
@@ -99,8 +141,31 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  data () {
+    return {
+      dismissSecs: 5,
+      dismissCountDown: 0,
+      showDismissibleAlert: false
+    }
+  },
+  computed: {
+    ...mapState('auth', ['user'])
+  },
+  methods: {
+    ...mapActions('auth', ['logUserOut']),
+    logout () {
+      this.logUserOut()
+    },
+    countDownChanged (dismissCountDown) {
+      this.dismissCountDown = dismissCountDown
+    },
+    showAlert () {
+      this.dismissCountDown = this.dismissSecs
+    }
+  }
 }
 </script>
 
@@ -108,5 +173,8 @@ export default {
 .nav-logo img{
   width: 50px;
   width: 122px;
+}
+.alert{
+  position: absolute;
 }
 </style>

@@ -1,8 +1,11 @@
 // import Vue from 'vue'
 
 export default {
-  updateUserGame (state, userGame) {
+  getUserGame (state, userGame) {
     state.userGame = userGame
+  },
+  removeUserGame (state) {
+    state.userGame = {}
   },
   updateSnackbar (state, settings) {
     state.snackbar = {
@@ -12,5 +15,11 @@ export default {
   },
   updateLoadingStatus (state, isLoading) {
     state.loading = isLoading
+  },
+  UpdateCategory: (state, category) => {
+    state.category = category
+  },
+  withdrawinfo: (state, request) => {
+    state.withdrawRequests = request
   }
 }

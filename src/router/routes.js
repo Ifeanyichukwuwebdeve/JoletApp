@@ -1,6 +1,9 @@
 import Home from '@/views/Home'
 import Login from '@/views/auth/Login.vue'
 import Sign from '@/views/auth/Signup.vue'
+import Dashboard from '@/views/dashboard/Dashboard.vue'
+import Settings from '@/views/dashboard/Settings.vue'
+import Withdraw from '@/views/dashboard/Withdraw.vue'
 
 export default [
   {
@@ -14,7 +17,7 @@ export default [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Faq.vue')
+    component: () => import('../views/Faq.vue')
   },
   {
     path: '/login',
@@ -29,33 +32,31 @@ export default [
   {
     path: '/privacy',
     name: 'Privacy',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Privacy.vue')
+    component: () => import('../views/Privacy.vue')
   },
   {
     path: '/terms',
     name: 'Terms',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Terms.vue')
+    component: () => import('../views/Terms.vue')
   },
   {
     path: '/dashboard',
     name: 'Dashboard',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Dashboard.vue')
+    component: Dashboard
   },
   {
     path: '/quiz',
     name: 'Questions',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Questions.vue')
+    component: () => import('../views/Questions.vue')
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: Settings
+  },
+  {
+    path: '/withdraw',
+    name: 'Withdraw',
+    component: Withdraw
   }
 ]
