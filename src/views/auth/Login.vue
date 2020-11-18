@@ -53,7 +53,7 @@
                       Remember Me
                     </label>
                 <div class="forgot">
-                  <a href="#">Forgot password?</a>
+                  <router-link to="/forgot-password">Forgot password?</router-link>
                 </div>
               </div>
 

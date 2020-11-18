@@ -4,7 +4,6 @@
       :numCorrect="numCorrect"
       :numTotal="numTotal"
     />
-    <h1>{{ message }}</h1>
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-8">
@@ -12,6 +11,7 @@
             v-if="questions.length"
             :currentQuestion="questions[index]"
             :next="next"
+            @created="handleCreate"
             :increment="increment"
            />
         </div>
@@ -35,18 +35,27 @@ export default {
       index: 0,
       numCorrect: 0,
       numTotal: 0,
-      message: 'Welcome, Please Wait....'
+      dismissSecs: 200,
+      dismissCountDown: 0,
+      showDismissibleAlert: false
     }
   },
   methods: {
-    next () {
+    handleCreate () {
       this.index++
+      console.log('Component was Created')
     },
     increment (isCorrect) {
       if (isCorrect) {
         this.numCorrect++
       }
       this.numTotal++
+    },
+    countDownChanged (dismissCountDown) {
+      this.dismissCountDown = dismissCountDown
+    },
+    showAlert () {
+      this.dismissCountDown = this.dismissSecs
     }
   },
   mounted: function () {

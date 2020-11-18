@@ -108,26 +108,8 @@
                         >Log out</a
                       >
                     </li>
-                    <!-- <b-button @click="showAlert" variant="info">
-                      Show alert with count-down timer
-                    </b-button> -->
                   </ul>
                 </div>
-                <b-alert
-                  :show="dismissCountDown"
-                  dismissible
-                  variant="danger"
-                  @dismissed="dismissCountDown=0"
-                  @dismiss-count-down="countDownChanged"
-                >
-                  <p>This alert will dismiss after {{ dismissCountDown }} seconds...</p>
-                  <b-progress
-                    variant="warning"
-                    :max="dismissSecs"
-                    :value="dismissCountDown"
-                    height="4px"
-                  ></b-progress>
-                </b-alert>
               </nav>
               <!-- Main Menu End-->
             </div>
@@ -144,13 +126,6 @@
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'Navbar',
-  data () {
-    return {
-      dismissSecs: 5,
-      dismissCountDown: 0,
-      showDismissibleAlert: false
-    }
-  },
   computed: {
     ...mapState('auth', ['user'])
   },
@@ -173,8 +148,5 @@ export default {
 .nav-logo img{
   width: 50px;
   width: 122px;
-}
-.alert{
-  position: absolute;
 }
 </style>

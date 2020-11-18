@@ -18,8 +18,8 @@
                   <h2>{{ answeredQuestions }} <small class="info">of {{ totalQuestions }}</small></h2>
                   <small>Total Questions</small>
                   <b-progress
-                  :value="value"
-                  :max="max"
+                  :value="answeredQuestions"
+                  :max="totalQuestions"
                   show-value class="mt-4">
                   </b-progress>
                   </div>
@@ -32,8 +32,8 @@
                   <h2>{{ joletCoin }} <small class="info">N{{ amount }}</small></h2>
                   <small>Total coins</small>
                   <b-progress l-green
-                  :joletCoin="joletCoin"
-                  :joletCoinMax="joletCoin"
+                  :value="amount"
+                  :max="1000"
                   show-value class="mt-4">
                   </b-progress>
                 </div>
@@ -57,7 +57,7 @@ export default {
       level: '1',
       value: 20,
       max: 40,
-      totalQuestions: 749,
+      totalQuestions: 74,
       answeredQuestions: 50,
       joletCoin: 20,
       amount: null
@@ -71,6 +71,9 @@ export default {
     ...mapActions(['getUserGame']),
     getGame () {
       this.getUserGame(this.user.Game)
+      const totalAmount = this.userGame.joletCoin * 10
+      this.amount = totalAmount
+      return this.amount
     }
   },
   mounted () {

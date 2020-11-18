@@ -1,10 +1,11 @@
 import axios from './axiosConfig'
-// import router from '../router'
+// import user from './modules/user'
+import router from '../router'
 
 export default {
-  async getUserGame ({ commit }, id) {
+  async getUserGame ({ commit, rootState }, id) {
     try {
-      const { data } = await axios.get(`game/${id}`)
+      const { data } = await axios.get(`game/${rootState.auth.user.Game}`)
       commit('updateLoadingStatus', false, { root: true })
       commit('getUserGame', data.gamestatus)
     } catch (error) {
@@ -25,5 +26,19 @@ export default {
     }
     commit('updateSnackbar', snackbar, { root: true })
     commit('withdrawinfo', res.data)
+  },
+  async updateAnswered ({ commit, rootState }, payload) {
+    const res = await axios.patch(
+      `game/${rootState.userGame._id}/answered`,
+      payload
+    )
+    console.log(res)
+    const snackbar = {
+      show: true,
+      variant: 'success',
+      message: 'Game data sent!'
+    }
+    commit('updateSnackbar', snackbar, { root: true })
+    router.push('/dashboard')
   }
 }

@@ -52,7 +52,7 @@ export default {
         message: 'Sign up successful!'
       }
       commit('updateSnackbar', snackbar, { root: true })
-      router.replace('/login')
+      router.replace('/verify')
     },
     async verify ({ commit }, payload) {
       try {

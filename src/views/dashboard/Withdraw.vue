@@ -20,15 +20,11 @@
             <form @submit.prevent="onSubmit" class="container">
               <div class="form-group">
                 <label for="">Bank</label>
-                <input
-                  type="text"
-                  name="bank"
-                  v-model.trim="bank"
-                  class="form-control"
-                  placeholder="Bank"
-                  aria-describedby="helpId"
-                  required
-                />
+                <b-form-select
+                  v-model="selected"
+                  :options="options"
+                  @change="selectBank(selected)"
+                ></b-form-select>
               </div>
               <div class="form-group">
                 <label for="">Account Name</label>
@@ -84,6 +80,17 @@ export default {
     return {
       errors: [],
       bank: null,
+      selected: null,
+      options: [
+        { value: 'Fidelity Bank', text: 'Fidelity Bank' },
+        { value: 'First Bank', text: 'First Bank' },
+        { value: 'Guaranty Trust Bank', text: 'Guaranty Trust Bank' },
+        { value: 'Zenith Bank', text: 'Zenith Bank' },
+        { value: 'Union Bank', text: 'Union Bank' },
+        { value: 'UBA', text: 'UBA' },
+        { value: 'Access Bank', text: 'Access Bank' },
+        { value: null, text: 'Bank' }
+      ],
       accountName: null,
       userId: null,
       userName: null,
@@ -100,6 +107,9 @@ export default {
   },
   methods: {
     ...mapActions(['withdrawRequest']),
+    selectBank (bank) {
+      this.bank = bank
+    },
     onSubmit () {
       this.errors = []
 

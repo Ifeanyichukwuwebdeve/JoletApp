@@ -3,7 +3,7 @@
     <div class="bottom-nav fixed-bottom">
       <div class="container">
         <div class="row">
-          <div v-b-modal.modal-1 class="col-4 text-center">
+          <div v-b-modal.modal-1 class="col-4 text-center mt-3">
             <a href="#">
               <i class="fa fa-chevron-circle-down"></i>
               <p>Category</p>
@@ -20,13 +20,13 @@
               </b-modal>
             </a>
           </div>
-          <div class="col-4 text-center">
+          <div class="col-4 text-center mt-3">
             <router-link to="/withdraw">
               <i class="fa fa-wallet" aria-hidden="false"></i>
               <p>Withdraw</p>
             </router-link>
           </div>
-          <div class="col-4 text-center">
+          <div class="col-4 text-center mt-3">
             <router-link to="/settings">
               <i class="fa fa-cogs" aria-hidden="false"></i>
               <p>Settings</p>

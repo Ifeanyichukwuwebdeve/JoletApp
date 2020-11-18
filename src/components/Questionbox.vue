@@ -21,10 +21,10 @@
         :disabled="selectedIndex === null || this.answered"
         >Submit
         </b-button>
-        <b-button
+      <b-button
        variant="primary"
         @click="next"
-        >Submit
+        >Next
         </b-button>
     </b-jumbotron>
   </div>
@@ -45,13 +45,6 @@ export default {
       correctIndex: null,
       shuffledAnswers: null,
       answered: false
-    }
-  },
-  computed: {
-    answers () {
-      const answers = [...this.currentQuestion.incorrect_answers]
-      answers.push(this.currentQuestion.correct_answer)
-      return answers
     }
   },
   watch: {
@@ -95,16 +88,10 @@ export default {
         answerClass = 'incorrect'
       }
       return answerClass
-    },
-    callFunction () {
-      setTimeout(function () {
-        const next = [...this.next]
-        console.log(next)
-      }, 9000)
     }
   },
-  mounted () {
-    this.callFunction()
+  created () {
+    this.$emit('created')
   }
 }
 </script>

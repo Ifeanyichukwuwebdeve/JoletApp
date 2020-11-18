@@ -48,7 +48,7 @@
             <!-- /.dropdown -->
 
             <div class="d-inline dropdown">
-              <b-dropdown id="dropdown-1" :text="user.firstName" class="m-md-2">
+              <b-dropdown id="dropdown-1" :text="name" class="m-md-2">
                 <b-dropdown-item @click="logout">Log out</b-dropdown-item>
             </b-dropdown>
 
@@ -69,6 +69,7 @@ export default {
   name: 'TopNav',
   data () {
     return {
+      name: null
     }
   },
   computed: {
@@ -79,6 +80,9 @@ export default {
     logout () {
       this.logUserOut()
     }
+  },
+  mounted () {
+    this.name = this.user.firstName + ' ' + this.user.lastName
   }
 }
 </script>

@@ -1,9 +1,4 @@
 import Home from '@/views/Home'
-import Login from '@/views/auth/Login.vue'
-import Sign from '@/views/auth/Signup.vue'
-import Dashboard from '@/views/dashboard/Dashboard.vue'
-import Settings from '@/views/dashboard/Settings.vue'
-import Withdraw from '@/views/dashboard/Withdraw.vue'
 
 export default [
   {
@@ -22,41 +17,56 @@ export default [
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: () => import(/* webpackChunkName: 'login' */ '@/views/auth/Login.vue')
   },
   {
     path: '/signup',
     name: 'Signup',
-    component: Sign
+    component: () => import(/* webpackChunkName: 'signUp' */ '@/views/auth/Signup.vue')
+  },
+  {
+    path: '/verify',
+    name: 'Verify',
+    component: () => import(/* webpackChunkName: 'verify' */ '@/views/auth/Verify.vue')
+  },
+  {
+    path: '/forgot-password',
+    name: 'ForgotPassword',
+    component: () => import(/* webpackChunkName: 'forgot-password' */ '@/views/auth/ForgotPassword.vue')
+  },
+  {
+    path: '/reset-password',
+    name: 'ResetPassword',
+    component: () => import(/* webpackChunkName: 'reset-password' */ '@/views/auth/ResetPassword.vue')
   },
   {
     path: '/privacy',
     name: 'Privacy',
-    component: () => import('../views/Privacy.vue')
+    component: () => import(/* webpackChunkName: 'privacy' */ '../views/Privacy.vue')
   },
   {
     path: '/terms',
     name: 'Terms',
-    component: () => import('../views/Terms.vue')
+    component: () => import(/* webpackChunkName: 'terms' */ '../views/Terms.vue')
   },
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard
+    component: () => import(/* webpackChunkName: 'dashboard' */ '@/views/dashboard/Dashboard.vue')
   },
   {
     path: '/quiz',
     name: 'Questions',
-    component: () => import('../views/Questions.vue')
+    component: () => import(/* webpackChunkName: 'questions' */ '../views/Questions.vue')
   },
   {
     path: '/settings',
     name: 'Settings',
-    component: Settings
+    component: () => import(/* webpackChunkName: 'settings' */ '@/views/dashboard/Settings.vue')
   },
   {
     path: '/withdraw',
     name: 'Withdraw',
-    component: Withdraw
+    component: () => import(/* webpackChunkName: 'withdraw' */ '@/views/dashboard/Withdraw.vue')
   }
 ]

@@ -1,6 +1,5 @@
 <template>
   <div :style="image">
-    <FlashMessage :position="'right bottom'"></FlashMessage>
     <div class="container error-div">
       <li class="alert alert-danger text-center" v-for="error in errors" :key="error">
         {{error}}
@@ -13,7 +12,7 @@
             <img src="img/account-logo-wht.png" alt="" class="text-center" />
           </div>
           <div class="login-form">
-            <h2 class="text-center">Log in</h2>
+            <h2 class="text-center">Forgot password</h2>
             <div class="login-line"></div>
             <form @submit.prevent="onSubmit" class="container">
               <div class="form-group">
@@ -29,35 +28,7 @@
                 />
               </div>
 
-              <div class="form-group">
-                <label for="">Password</label>
-                <input
-                  type="password"
-                  name="Password"
-                  v-model="password"
-                  class="form-control"
-                  placeholder="Password"
-                  aria-describedby="helpId"
-                  required
-                />
-              </div>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input
-                        type="checkbox"
-                        class="form-check-input"
-                        name=""
-                        v-model="remember"
-                        value="checkedValue"
-                      />
-                      Remember Me
-                    </label>
-                <div class="forgot">
-                  <a href="#">Forgot password?</a>
-                </div>
-              </div>
-
-              <button class="btn-submit">Log in</button>
+              <button class="btn-submit">Send</button>
 
               <div class="dont-have-account">
                 <p class="text-center">
@@ -78,13 +49,11 @@
 // import axios from 'axios'
 import { mapActions } from 'vuex'
 export default {
-  name: 'ForgottenPassword',
+  name: 'ForgotPassword',
   data: function () {
     return {
       errors: [],
       email: null,
-      password: null,
-      remember: null,
       image: { backgroundImage: 'url(img/bg_forall.svg)' }
     }
   },
@@ -98,30 +67,16 @@ export default {
       } else if (!this.validEmail(this.email)) {
         return this.errors.push('Valid email required.')
       }
-      if (!this.password) {
-        return this.errors.push('Password is  required.')
-      }
       if (!this.errors) {
         return {
-          email: this.email,
-          password: this.password,
-          remember: this.remember
+          email: this.email
         }
       }
       const payload = {
-        email: this.email,
-        password: this.password
+        email: this.email
       }
-      // axios.post('/api/login', payload)
-      //   .then((response) => {
-      //     console.log('Logged in')
-      //     router.push('/dashboard')
-      //   })
-      //   .catch((errors) => {
-      //     console.log('Cannot login')
-      //     router.push('/dashboard')
-      //   })
-      this.login(payload)
+      // this.login(payload)
+      console.log(payload)
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -142,7 +97,7 @@ div{
 }
 
 .login_container{
-  margin-top: 24px;
-  margin-bottom: 106px;
+ margin-top: 50px;
+ margin-bottom: 172px;
 }
 </style>
