@@ -21,11 +21,6 @@
         :disabled="selectedIndex === null || this.answered"
         >Submit
         </b-button>
-      <b-button
-       variant="primary"
-        @click="next"
-        >Next
-        </b-button>
     </b-jumbotron>
   </div>
 </template>
@@ -36,7 +31,6 @@ export default {
   name: 'QuestionsBox',
   props: {
     currentQuestion: Object,
-    next: Function,
     increment: Function
   },
   data () {
@@ -89,9 +83,6 @@ export default {
       }
       return answerClass
     }
-  },
-  created () {
-    this.$emit('created')
   }
 }
 </script>

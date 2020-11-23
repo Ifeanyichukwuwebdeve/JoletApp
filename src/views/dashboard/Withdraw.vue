@@ -1,7 +1,7 @@
 <template>
   <div :style="image">
     <div class="col-lg-3 col-md-6 col-sm-12 play-game fixed">
-              <router-link class="btn play-btn" to="/dashboard">Back</router-link>
+              <button class="btn play-btn" @click="back">Back</button>
     </div>
     <div class="container error-div">
       <li class="alert alert-danger text-center" v-for="error in errors" :key="error">
@@ -73,6 +73,7 @@
 </template>
 
 <script>
+import router from '@/router'
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'Withdraw',
@@ -107,6 +108,9 @@ export default {
   },
   methods: {
     ...mapActions(['withdrawRequest']),
+    back () {
+      router.back()
+    },
     selectBank (bank) {
       this.bank = bank
     },

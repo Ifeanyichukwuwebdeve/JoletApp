@@ -1,7 +1,6 @@
 export default {
   userGame: {},
-  snackbar: {
-    show: false,
+  alert: {
     variant: 'success',
     message: ''
   },

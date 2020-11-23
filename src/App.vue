@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-        <b-button @click="showAlert" variant="info">
+        <!-- <b-button @click="showAlert" variant="info">
         Show alert with count-down timer
-      </b-button>
+      </b-button> -->
       <b-alert
       :show="dismissCountDown"
       dismissible

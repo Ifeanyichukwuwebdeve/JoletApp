@@ -19,23 +19,21 @@ export default {
             // on initial api requests
             axios.defaults.headers.common.Authorization = `Bearer ${res.data.token}`
             router.replace('/dashboard')
-            const snackbar = {
-              show: true,
-              variant: 'error',
+            const alert = {
+              variant: 'success',
               message: 'Login Successful.'
             }
-            commit('updateSnackbar', snackbar, { root: true })
+            commit('updateAlert', alert, { root: true })
             commit('updateLoadingStatus', false, { root: true })
           })
       } catch (err) {
         console.error(err)
-        const snackbar = {
-          show: true,
+        const alert = {
           variant: 'error',
           message: 'Login failed.'
         }
         commit('updateLoadingStatus', false, { root: true })
-        commit('updateSnackbar', snackbar, { root: true })
+        commit('updateAlert', alert, { root: true })
       }
     },
     async register ({ commit }, payload) {
@@ -46,12 +44,11 @@ export default {
       console.log(res)
       commit('updateUser', { email: payload.email })
 
-      const snackbar = {
-        show: true,
+      const alert = {
         variant: 'success',
         message: 'Sign up successful!'
       }
-      commit('updateSnackbar', snackbar, { root: true })
+      commit('updateAlert', alert, { root: true })
       router.replace('/verify')
     },
     async verify ({ commit }, payload) {
@@ -63,23 +60,22 @@ export default {
         console.log(res)
         router.replace('/login')
       } catch (err) {
-        const snackbar = {
-          show: true,
+        const alert = {
+
           variant: 'error',
           message: 'Invalid Code'
         }
-        commit('updateSnackbar', snackbar, { root: true })
+        commit('updateAlert', alert, { root: true })
       }
     },
     async logUserOut ({ commit }, payload) {
       commit('clearUserInfo')
-      const snackbar = {
-        show: true,
+      const alert = {
         variant: 'success',
         message: 'Invalid Code'
       }
       commit('removeUserGame', { root: true })
-      commit('updateSnackbar', snackbar, { root: true })
+      commit('updateAlert', alert, { root: true })
       localStorage.removeItem('token')
       router.replace('/')
     },

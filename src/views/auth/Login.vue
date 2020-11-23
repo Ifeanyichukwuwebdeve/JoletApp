@@ -1,6 +1,5 @@
 <template>
   <div :style="image">
-    <FlashMessage :position="'right bottom'"></FlashMessage>
     <div class="container error-div">
       <li class="alert alert-danger text-center" v-for="error in errors" :key="error">
         {{error}}

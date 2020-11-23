@@ -70,7 +70,7 @@ export default {
   methods: {
     ...mapActions(['getUserGame']),
     getGame () {
-      this.getUserGame(this.user.Game)
+      this.getUserGame()
       const totalAmount = this.userGame.joletCoin * 10
       this.amount = totalAmount
       return this.amount

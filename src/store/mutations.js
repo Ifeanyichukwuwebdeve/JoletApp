@@ -7,8 +7,8 @@ export default {
   removeUserGame (state) {
     state.userGame = {}
   },
-  updateSnackbar (state, settings) {
-    state.snackbar = {
+  updateAlert (state, settings) {
+    state.alert = {
       ...state.snackbar,
       ...settings
     }

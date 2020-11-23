@@ -68,5 +68,20 @@ export default [
     path: '/withdraw',
     name: 'Withdraw',
     component: () => import(/* webpackChunkName: 'withdraw' */ '@/views/dashboard/Withdraw.vue')
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: () => import(/* webpackChunkName: 'admin' */ '@/views/admin/Admin.vue')
+  },
+  {
+    path: '/admin-withdraw',
+    name: 'AdmainWithdraw',
+    component: () => import(/* webpackChunkName: 'admin-withdraw' */ '@/views/admin/WithdrawalRequest.vue')
+  },
+  {
+    path: '/admin-user-info/:id',
+    name: 'admin-user-info',
+    component: () => import(/* webpackChunkName: 'admin-user-info' */ '@/views/admin/User.vue')
   }
 ]

@@ -3,7 +3,7 @@ import axios from './axiosConfig'
 import router from '../router'
 
 export default {
-  async getUserGame ({ commit, rootState }, id) {
+  async getUserGame ({ commit, rootState }) {
     try {
       const { data } = await axios.get(`game/${rootState.auth.user.Game}`)
       commit('updateLoadingStatus', false, { root: true })
@@ -19,12 +19,12 @@ export default {
       payload
     )
     console.log(res)
-    const snackbar = {
+    const alert = {
       show: true,
       variant: 'success',
       message: 'Request sent!'
     }
-    commit('updateSnackbar', snackbar, { root: true })
+    commit('updateAlert', alert, { root: true })
     commit('withdrawinfo', res.data)
   },
   async updateAnswered ({ commit, rootState }, payload) {
@@ -33,12 +33,12 @@ export default {
       payload
     )
     console.log(res)
-    const snackbar = {
+    const alert = {
       show: true,
       variant: 'success',
       message: 'Game data sent!'
     }
-    commit('updateSnackbar', snackbar, { root: true })
+    commit('updateAlert', alert, { root: true })
     router.push('/dashboard')
   }
 }

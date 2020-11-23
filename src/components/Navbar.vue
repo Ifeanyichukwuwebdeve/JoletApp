@@ -96,9 +96,14 @@
                       >
                     </li>
 
-                    <li class="dropdown anchor" v-if="user.token">
+                    <li class="dropdown anchor" v-if="user.token && !user.isAdmin">
                       <a href="#"
                         ><router-link to="/dashboard"><i class="fas fa-user-circle"></i><span>{{user.firstName}}</span></router-link></a
+                      >
+                    </li>
+                    <li class="dropdown anchor" v-if="user.token && user.isAdmin">
+                      <a href="#"
+                        ><router-link to="/admin"><i class="fas fa-user-circle"></i><span>{{user.firstName}}</span></router-link></a
                       >
                     </li>
 
