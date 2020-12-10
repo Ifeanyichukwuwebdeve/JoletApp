@@ -113,6 +113,16 @@
                     required
                   />
               </div>
+            </div>
+            <div class="form-row pt-4">
+                <div class="col-12">
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+                  <label class="form-check-label" for="defaultCheck1">
+                    <router-link to="/terms">Agree to our Terms of use</router-link>
+                  </label>
+                </div>
+                </div>
               </div>
               <button class="btn-submit" type="submit" >Sign up</button>
 

@@ -1287,7 +1287,6 @@ h1,
 .h1 {
   font-size: 3em;
   line-height: 1.15;
-  margin-bottom: 30px
 }
 
 h1 small,
@@ -15975,7 +15974,7 @@ section.content {
 
 .card .header h2 small a {
   font-weight: 700;
-  color: #777
+  color: #777;
 }
 
 .card .p-15 {
@@ -15988,8 +15987,8 @@ section.content {
   background: #fff;
   font-size: 14px;
   color: #222;
-  padding: 20px;
-  height: 184px;
+  padding: 40px 20px 10px 20px;
+  height: 206px;
   border: 1px solid #33519a;
 }
 

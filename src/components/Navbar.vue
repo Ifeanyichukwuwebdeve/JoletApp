@@ -41,26 +41,21 @@
                     <nav class="menu-box">
                       <ul class="navigation clearfix">
                       <li class="dropdown">
-                      <a href="#"
-                        ><router-link to="/">Home</router-link></a
-                      >
+                        <router-link to="/">Home</router-link>
                     </li>
                     <li class="dropdown" v-if="!user.token">
-                      <a href="#"
-                        ><router-link to="/login">Login</router-link></a
-                      >
+                      <router-link to="/login">Login</router-link>
                     </li>
 
                     <li class="dropdown anchor" v-if="!user.token">
-                      <a href="#"
-                        ><router-link to="/signup">Signup</router-link></a
-                      >
+                      <router-link to="/signup">Signup</router-link>
                     </li>
 
-                    <li class="dropdown anchor" v-if="user.token">
-                      <a href="#"
-                        ><router-link to="/dashboard"><i class="fas fa-user-circle"></i><span>{{user.firstName}}</span></router-link></a
-                      >
+                    <li class="dropdown anchor" v-if="user.token && !user.isAdmin">
+                      <router-link to="/dashboard"><i class="fas fa-user-circle"></i><span class="pl-1">{{user.firstName}}</span></router-link>
+                    </li>
+                    <li class="dropdown anchor" v-if="user.token && user.isAdmin">
+                      <router-link to="/admin"><i class="fas fa-user-circle"></i><span class="pl-1">{{user.firstName}}</span></router-link>
                     </li>
 
                     <li class="dropdown anchor" v-if="user.token">
@@ -80,31 +75,21 @@
                 >
                   <ul class="navigation clearfix">
                     <li class="dropdown">
-                      <a href="#"
-                        ><router-link to="/">Home</router-link></a
-                      >
+                      <router-link to="/">Home</router-link>
                     </li>
                     <li class="dropdown" v-if="!user.token">
-                      <a href="#"
-                        ><router-link to="/login">Login</router-link></a
-                      >
+                      <router-link to="/login">Login</router-link>
                     </li>
 
                     <li class="dropdown anchor" v-if="!user.token">
-                      <a href="#"
-                        ><router-link to="/signup">Signup</router-link></a
-                      >
+                      <router-link to="/signup">Signup</router-link>
                     </li>
 
                     <li class="dropdown anchor" v-if="user.token && !user.isAdmin">
-                      <a href="#"
-                        ><router-link to="/dashboard"><i class="fas fa-user-circle"></i><span>{{user.firstName}}</span></router-link></a
-                      >
+                      <router-link to="/dashboard"><i class="fas fa-user-circle"></i><span class="pl-1">{{user.firstName}}</span></router-link>
                     </li>
                     <li class="dropdown anchor" v-if="user.token && user.isAdmin">
-                      <a href="#"
-                        ><router-link to="/admin"><i class="fas fa-user-circle"></i><span>{{user.firstName}}</span></router-link></a
-                      >
+                      <router-link to="/admin"><i class="fas fa-user-circle"></i><span class="pl-1">{{user.firstName}}</span></router-link>
                     </li>
 
                     <li class="dropdown anchor" v-if="user.token">

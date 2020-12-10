@@ -12,16 +12,16 @@
                 <a href="#"><router-link to="/privacy">Privacy Policy</router-link></a> / <a href="#"><router-link to="/faq">FAQ</router-link></a>
               </div>
             </div>
-            <div class="col-12 col-sm-2 col-lg-2">
+            <div class="col-12 col-sm-2 col-lg-2 text-right">
               <div class="footer-widget logo-widget">
                 <ul class="social-icons">
-                  <li>
+                  <li class="pl-2">
                     <a href="#"><span class="fab fa-facebook-f"></span></a>
                   </li>
-                  <li>
+                  <li class="pl-2">
                     <a href="#"><span class="fab fa-twitter"></span></a>
                   </li>
-                  <li>
+                  <li class="pl-2">
                     <a href="#"><span class="fab fa-instagram"></span></a>
                   </li>
                 </ul>

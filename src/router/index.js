@@ -13,24 +13,25 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach(async (to, from, next) => {
-  // if (to.matched.some(record => record.meta.requiresAuth)) {
-  //   if (await actions.getAuthUser()) { // if logged in
-  //     next()
-  //   } else { // not logged in
-  //     next({
-  //       path: '/login',
-  //       params: { nextUrl: to.fullPath }
-  //     })
-  //   }
-  // } else {
-  next()
-  // }
-})
+// router.beforeEach(async (to, from, next) => {
+//   if (to.matched.some(record => record.meta.requiresAuth)) {
+//     if (state.auth.user) { // if logged in
+//       next()
+//     } else { // not logged in
+//       next({
+//         path: '/login',
+//         params: { nextUrl: to.fullPath }
+//       })
+//     }
+//   } else {
+//     next()
+//   }
+// })
 
 router.afterEach((to, from) => {
   // turn off spinner
   mutations.updateLoadingStatus(state, false)
+  // console.log(state.auth)
 })
 
 export default router

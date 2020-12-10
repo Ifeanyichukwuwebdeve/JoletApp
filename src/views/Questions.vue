@@ -48,6 +48,7 @@
 <script>
 import QuestionHeader from '../components/QuestionHeader.vue'
 import QuestionBox from '../components/Questionbox.vue'
+import { mapState } from 'vuex'
 
 const FULL_DASH_ARRAY = 283
 const WARNING_THRESHOLD = 10
@@ -77,6 +78,7 @@ export default {
   },
   data () {
     return {
+      quizApi: null,
       questions: [],
       index: 0,
       numCorrect: 0,
@@ -97,6 +99,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(['category']),
     circleDasharray () {
       return `${(this.timeFraction * FULL_DASH_ARRAY).toFixed(0)} 283`
     },
@@ -151,7 +154,23 @@ export default {
     }
   },
   mounted: function () {
-    fetch('https://opentdb.com/api.php?amount=50', {
+    if (this.category === null) {
+      this.quizApi = 'https://opentdb.com/api.php?amount=20'
+      console.log(this.quizApi)
+    } else if (this.category === 9) {
+      this.quizApi = `https://opentdb.com/api.php?amount=${this.category}`
+      console.log(this.quizApi)
+    } else if (this.category === 21) {
+      this.quizApi = `https://opentdb.com/api.php?amount=${this.category}`
+      console.log(this.quizApi)
+    } else if (this.category === 14) {
+      this.quizApi = `https://opentdb.com/api.php?amount=${this.category}`
+      console.log(this.quizApi)
+    } else if (this.category === 13) {
+      this.quizApi = `https://opentdb.com/api.php?amount=${this.category}`
+      console.log(this.quizApi)
+    }
+    fetch(this.quizApi, {
       method: 'get'
     })
       .then(response => {

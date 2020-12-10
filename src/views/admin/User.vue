@@ -3,7 +3,7 @@
    <b-button variant="dark" @click="back">back</b-button>
     <div class="container user-info">
       <h1>User Info</h1>
-      <p class="title">User id: {{singleUser.user._id}} </p>
+      <p class="title">User id: {{this.$route.params.id}} </p>
       <p class="title">User Fullname: {{`${singleUser.user.firstName} ${singleUser.user.lastName}`}} </p>
       <p class="title">User Email: {{singleUser.user.email}} </p>
       <p class="title">User Phone: {{singleUser.user.phone}} </p>
@@ -25,6 +25,9 @@
 import router from '@/router'
 import { mapState, mapActions } from 'vuex'
 export default {
+  // beforeRouteEnter (to, from, next) {
+  //   console.log(to, from, next)
+  // },
   name: 'userInfo',
   data () {
     return {

@@ -34,7 +34,7 @@
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                Why is the moon sometimes out during the day?
+                How do I earn?
               </button>
             </div>
 
@@ -45,16 +45,7 @@
               data-parent="#accordion"
             >
               <div class="accordion-content">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life
-                accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                non cupidatat skateboard dolor brunch. Food truck quinoa
-                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                wes anderson cred nesciunt sapiente ea proident. Ad vegan
-                excepteur butcher vice lomo. Leggings occaecat craft beer
-                farm-to-table, raw denim aesthetic synth nesciunt you probably
-                haven't heard of them accusamus labore sustainable VHS.
+                Every question answered correctly amount Jolet point(s).
               </div>
             </div>
           </div>
@@ -68,7 +59,7 @@
                 aria-expanded="false"
                 aria-controls="collapseTwo"
               >
-                Why is the sky blue?
+                What is the money equivalent to Jolet point(s)?
               </button>
             </div>
             <div
@@ -78,16 +69,7 @@
               data-parent="#accordion"
             >
               <div class="accordion-content">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life
-                accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                non cupidatat skateboard dolor brunch. Food truck quinoa
-                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                wes anderson cred nesciunt sapiente ea proident. Ad vegan
-                excepteur butcher vice lomo. Leggings occaecat craft beer
-                farm-to-table, raw denim aesthetic synth nesciunt you probably
-                haven't heard of them accusamus labore sustainable VHS.
+                Each Jolet pont is N10 (Ten Naira).
               </div>
             </div>
           </div>
@@ -101,7 +83,7 @@
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
-                Will we ever discover aliens?
+                Is there any deduction from my earned points when I fail any question?
               </button>
             </div>
             <div
@@ -111,16 +93,7 @@
               data-parent="#accordion"
             >
               <div class="accordion-content">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life
-                accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                non cupidatat skateboard dolor brunch. Food truck quinoa
-                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                wes anderson cred nesciunt sapiente ea proident. Ad vegan
-                excepteur butcher vice lomo. Leggings occaecat craft beer
-                farm-to-table, raw denim aesthetic synth nesciunt you probably
-                haven't heard of them accusamus labore sustainable VHS.
+                No deduction of points from failed question(s).
               </div>
             </div>
           </div>
@@ -134,7 +107,7 @@
                 aria-expanded="false"
                 aria-controls="collapseFour"
               >
-                How much does the Earth weigh?
+                What is the minimum amount I can Withdraw from my earned points?
               </button>
             </div>
             <div
@@ -144,16 +117,33 @@
               data-parent="#accordion"
             >
               <div class="accordion-content">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life
-                accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                non cupidatat skateboard dolor brunch. Food truck quinoa
-                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                wes anderson cred nesciunt sapiente ea proident. Ad vegan
-                excepteur butcher vice lomo. Leggings occaecat craft beer
-                farm-to-table, raw denim aesthetic synth nesciunt you probably
-                haven't heard of them accusamus labore sustainable VHS.
+                The minimum amount one can withdraw is N3000 (Three thousand naira).
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" id="headingThree">
+              <button
+                class="accordion-title collapsed"
+                data-toggle="collapse"
+                data-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                How do I withdraw?
+              </button>
+            </div>
+            <div
+              id="collapseFour"
+              class="collapse accordion-content"
+              aria-labelledby="headingThree"
+              data-parent="#accordion"
+            >
+              <div class="accordion-content">
+                You have to make withdrawal request through your dashboard
+                and the amount requested for will be paid into your bank account
+                within 48 hours of your request.
               </div>
             </div>
           </div>
@@ -167,7 +157,7 @@
                 aria-expanded="false"
                 aria-controls="collapseFive"
               >
-                How do airplanes stay up?
+                Do I earn through referral?
               </button>
             </div>
             <div
@@ -177,16 +167,7 @@
               data-parent="#accordion"
             >
               <div class="accordion-content">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life
-                accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                non cupidatat skateboard dolor brunch. Food truck quinoa
-                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                wes anderson cred nesciunt sapiente ea proident. Ad vegan
-                excepteur butcher vice lomo. Leggings occaecat craft beer
-                farm-to-table, raw denim aesthetic synth nesciunt you probably
-                haven't heard of them accusamus labore sustainable VHS.
+                No.
               </div>
             </div>
           </div>

@@ -58,7 +58,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions('auth', ['login']),
+    ...mapActions('auth', ['forgotPassword']),
     onSubmit () {
       this.errors = []
 
@@ -75,8 +75,8 @@ export default {
       const payload = {
         email: this.email
       }
-      // this.login(payload)
-      console.log(payload)
+      this.forgotPassword(payload)
+      // console.log(payload)
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

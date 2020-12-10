@@ -8,7 +8,7 @@
             <div class="row">
               <div class="col-12 col-sm-6 col-lg-6">
                 <div class="auto-container">
-                  <h2>Terms of Services</h2>
+                  <h2>Terms of Use</h2>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-lg-6 bg-logo">
@@ -40,15 +40,15 @@
                   THE SERVICES IN ANY MANNER.
                 </p>
                 <p>
-                  Welcome to Career Move. Please read on to learn the rules and
+                  Welcome to Jolet Quiz. Please read on to learn the rules and
                   restrictions that govern your use of our website(s), products,
                   services and applications (the “Services”). If you have any
                   questions, comments, or concerns regarding these terms or the
-                  Services, please contact us at team@careermove.io
+                  Services, please contact us at hello@joletquiz.com
                 </p>
                 <p>
                   These Terms of Use (the “Terms”) are a binding contract
-                  between you and Career Move (“Career Move,” “we”, and “us”).
+                  between you and Jolet Quiz (“Jolet Quiz,” “we”, and “us”).
                   You must agree to and accept all of the Terms, or you don’t
                   have the right to use the Services. Your using the Services in
                   any way means that you agree to all of these Terms, and these
@@ -62,7 +62,7 @@
                   Terms may need to change along with the Services. We reserve
                   the right to change the Terms at any time, but if we do, we
                   will bring it to your attention by updating the terms on the
-                  Career Move website, by sending you an email, and/or by some
+                  Jolet Quiz website, by sending you an email, and/or by some
                   other means.
                 </p>
                 <p>
@@ -78,32 +78,13 @@
                   writing and signed by both you and us.
                 </p>
                 <p>
-                  <strong>What are the basics of using Career Move?</strong>
+                  <strong>What are the basics of using Jolet Quiz?</strong>
                 </p>
                 <p>
                   You may be required to sign up for an account, and select a
                   password and username. You agree to provide us with accurate,
                   complete, and up-to-date registration information about
-                  yourself. You may not select as your username a name that you
-                  don’t have the right to use, or another person’s name with the
-                  intent to impersonate that person. You may not transfer your
-                  account to anyone else without our prior written permission.
-                </p>
-                <p>
-                  You represent and warrant that you are an individual of legal
-                  age to form a binding contract, or if not, you’ve received
-                  your parent’s or guardian’s permission to use the Services and
-                  gotten your parent or guardian to agree to these Terms on your
-                  behalf.
-                </p>
-                <p>
-                  You will only use the Services for your own internal,
-                  personal, non-commercial use, and not on behalf of or for the
-                  benefit of any third party, and only in a manner that complies
-                  with all laws that apply to you. If your use of the Services
-                  is prohibited by applicable laws, then you aren’t authorized
-                  to use the Services. We can’t and won’t be responsible for
-                  your using the Services in a way that breaks the law.
+                  yourself.
                 </p>
                 <p>
                   You will not share your account or password with anyone, and
@@ -120,17 +101,17 @@
                 <p>
                   You may have heard of the Digital Millennium Copyright Act
                   (the “DMCA”), as it relates to online service providers, like
-                  Career Move, being asked to remove material that allegedly
+                  Jolet Quiz, being asked to remove material that allegedly
                   violates someone’s copyright. We respect others’ intellectual
                   property rights, and we reserve the right to delete or disable
                   Content alleged to be infringing, and to terminate the
                   accounts of repeat alleged infringers.:
                 </p>
                 <p>
-                  <strong>Will Career Move ever change the Services?</strong>
+                  <strong>Will Jolet Quiz ever change the Services?</strong>
                 </p>
                 <p>
-                  We’re always trying to improve the Services, so they may
+                  We’re always trying to improve our Services, so they may
                   change over time. We may suspend or discontinue any part of
                   the Services, or we may introduce new features or impose
                   limits on certain features or restrict access to parts or all
@@ -142,51 +123,22 @@
                   alleges you contributed that Content in violation of these
                   Terms), in our sole discretion, and without notice.
                 </p>
-                <p><strong>Does Career Move ever cost anything?</strong></p>
+                <p><strong>Does Jolet Quiz ever cost anything?</strong></p>
                 <p>
-                  Some of the services on Career Move are free and some are
+                  Some of the services on Jolet Quiz are free and some are
                   paid. We will notify you before any Services you are using
                   begin carrying a fee, and if you wish to continue using such
                   Services, you must pay all applicable fees for such Services.
                 </p>
                 <p>
                   <strong
-                    >What if I want to stop using Career Move ever?</strong
+                    >What if I want to stop using Jolet Quiz ever?</strong
                   >
                 </p>
                 <p>
-                  You’re free to do that at any time, by contacting us at
-                  team@careermove.io; please refer to our Privacy Policy, as
-                  well as the licenses above, to understand how we treat
-                  information you provide to us after you have stopped using our
-                  Services. Career Move ever is also free to terminate (or
-                  suspend access to) your use of the Services or your account,
-                  for any reason in our discretion, including your breach of
-                  these Terms. Career Move ever has the sole right to decide
-                  whether you are in violation of any of the restrictions set
-                  forth in these Terms
+                  You’re free to do that at any time.
                 </p>
-                <p>
-                  Account termination may result in destruction of any Content
-                  associated with your account, so keep that in mind before you
-                  decide to terminate your account. We will try to provide
-                  advance notice to you prior to our terminating your account so
-                  that you are able to retrieve any important User Submissions
-                  you may have stored in your account (to the extent allowed by
-                  law and these Terms), but we may not do so if we determine it
-                  would be impractical, illegal, not in the interest of
-                  someone’s safety or security, or otherwise harmful to the
-                  rights or property of Career Move.
-                </p>
-                <p>
-                  Provisions that, by their nature, should survive termination
-                  of these Terms shall survive termination. By way of example,
-                  all of the following will survive termination: any obligation
-                  you have to pay us or indemnify us, any limitations on our
-                  liability, any terms regarding ownership or intellectual
-                  property rights, and terms regarding disputes between us.
-                </p>
-                <p><strong>What are Career Move's Terms of Sale?</strong></p>
+                <p><strong>What are Jolet Quiz Terms of Sale?</strong></p>
                 <p>
                   If you purchase any goods or services or license any software
                   through the site whether or not in connection with an Offer or
@@ -221,3 +173,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h4{
+  color: #000 !important;
+}
+strong{
+  color: #000 !important;
+}
+</style>

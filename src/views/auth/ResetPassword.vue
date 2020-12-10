@@ -82,7 +82,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions('auth', ['login']),
+    ...mapActions('auth', ['resetPassword']),
     onSubmit () {
       this.errors = []
       if (!this.code) {
@@ -94,7 +94,7 @@ export default {
       if (this.password <= 6) {
         return this.errors.push('Password must exceed 6 characters')
       }
-      if (!this.passwordRepeat.includes(this.password)) {
+      if (!this.repeatPassword.includes(this.password)) {
         return this.errors.push('Passwords must match')
       }
       if (!this.errors) {
@@ -107,7 +107,7 @@ export default {
         code: this.code,
         password: this.password
       }
-      this.login(payload)
+      this.resetPassword(payload)
     },
     validpassword: function (password) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

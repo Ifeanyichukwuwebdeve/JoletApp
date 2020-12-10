@@ -78,7 +78,7 @@ export default {
   margin-top: 30px;
 }
  h3 {
-  color: #000;
+  color: #001fb0;
   margin-bottom: 0px;
   padding-left: 70px;
   padding-right: 70px;

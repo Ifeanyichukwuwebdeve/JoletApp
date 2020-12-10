@@ -34,7 +34,7 @@
             <div class="inner-column">
               <div class="text">
                 <p>
-                  This privacy policy describes how Jolet Empire collects, uses,
+                  This privacy policy describes how Jolet Quiz collects, uses,
                   shares and otherwise processes personal data of our website
                   visitors. We respects and protects your privacy and personal
                   data.
@@ -435,3 +435,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h4{
+  color: #000 !important;
+}
+strong{
+  color: #000 !important;
+}
+</style>

@@ -486,7 +486,7 @@ readers do not read off random characters that represent icons */
 
 .fa-bell:before {
   content: "\f0f3";
-  color: #0b7cc2;
+  color: #001fb0;
 }
 
 .fa-bell-slash:before {
@@ -850,7 +850,8 @@ readers do not read off random characters that represent icons */
   content: "\f447"; }
 
 .fa-chevron-circle-down:before {
-  content: "\f13a"; }
+  content: "\f13a";
+  color: #001fb0; }
 
 .fa-chevron-circle-left:before {
   content: "\f137"; }
@@ -970,7 +971,9 @@ readers do not read off random characters that represent icons */
   content: "\f013"; }
 
 .fa-cogs:before {
-  content: "\f085"; }
+  content: "\f085";
+  color: #001fb0;
+}
 
 .fa-coins:before {
   content: "\f51e"; }
@@ -4029,7 +4032,9 @@ readers do not read off random characters that represent icons */
   content: "\f554"; }
 
 .fa-wallet:before {
-  content: "\f555"; }
+  content: "\f555";
+  color: #001fb0;
+}
 
 .fa-warehouse:before {
   content: "\f494"; }

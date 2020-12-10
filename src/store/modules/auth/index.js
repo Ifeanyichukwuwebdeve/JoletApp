@@ -18,7 +18,12 @@ export default {
             // have to set this here or else it will be undefined
             // on initial api requests
             axios.defaults.headers.common.Authorization = `Bearer ${res.data.token}`
-            router.replace('/dashboard')
+            if (res.data.isAdmin) {
+              console.log('Welcome Admin')
+              router.replace('/admin')
+            } else {
+              router.replace('/dashboard')
+            }
             const alert = {
               variant: 'success',
               message: 'Login Successful.'
@@ -68,6 +73,39 @@ export default {
         commit('updateAlert', alert, { root: true })
       }
     },
+    async forgotPassword ({ commit }, payload) {
+      try {
+        const res = await axios.post(
+          'auth/forgot-password',
+          payload
+        )
+        console.log(res)
+        router.replace('/reset-password')
+      } catch (err) {
+        const alert = {
+
+          variant: 'error',
+          message: 'Invalid Code'
+        }
+        commit('updateAlert', alert, { root: true })
+      }
+    },
+    async resetPassword ({ commit }, payload) {
+      try {
+        const res = await axios.post(
+          'auth/reset-password',
+          payload
+        )
+        console.log(res)
+        router.replace('/login')
+      } catch (err) {
+        const alert = {
+          variant: 'error',
+          message: 'Invalid Code'
+        }
+        commit('updateAlert', alert, { root: true })
+      }
+    },
     async logUserOut ({ commit }, payload) {
       commit('clearUserInfo')
       const alert = {
@@ -92,6 +130,7 @@ export default {
     },
     clearUserInfo (state) {
       state.user = {}
+      state.userGame = []
     }
   },
   getters: {}

@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="backcolor">
     <section class="container pt-5 mt-4 main-container">
         <div class="block-header">
-              <div class="container mb-5">
-                <div class="row justify-content-between">
+              <div class="container mb-3 mt-5">
+                <div class="row justify-content-between" type="light" variant="light">
                   <h2 class="col-4">Dashboard</h2>
                   <h2 class="col-4">Level: {{ level }}</h2>
               </div>
@@ -25,10 +25,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6">
+              <div class="col-lg-6 col-md-6 joletcoin-con">
               <div class="card widget_2">
                 <div class="body">
-                  <h6>Jolet cions earned</h6>
+                  <h6>Jolet coins earned</h6>
                   <h2>{{ joletCoin }} <small class="info">N{{ amount }}</small></h2>
                   <small>Total coins</small>
                   <b-progress l-green
@@ -41,7 +41,8 @@
             </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 play-game">
-              <router-link class="btn play-btn" to="/quiz">Play Game</router-link>
+              <router-link v-if="user.isVerified" class="btn play-btn" to="/quiz">Play Game</router-link>
+              <router-link v-if="!user.isVerified" to="/verify" class="btn play-btn">Get verified</router-link>
             </div>
         </div>
     </section>
@@ -103,10 +104,35 @@ export default {
   padding: 0px !important;
   margin: 0px !important;
 }
+.widget_2 h2 {
+  color: #fff;
+}
+.body{
+  background-color: #001fb0 !important;
+  color: #fff;
+}
+.joletcoin-con .body{
+  background-color: #ffcc00 !important;
+  border: 1px solid #ffcc00 !important;
+}
+.body h6{
+  color: #fff;
+}
+.body small{
+  color: #fff;
+}
 
-@media screen and (max-width: 640px){
+.backcolor{
+  background-color: #f6f9fc;
+  height: 100vh;
+}
+
+@media screen and (min-width: 302px) and (max-width:1000px){
   .main-container{
     margin-bottom: 90px !important;
   }
+  .backcolor{
+  height: 135vh;
+}
 }
 </style>

@@ -13,6 +13,7 @@
           </div>
           <div class="login-form">
             <h2 class="text-center">Verify email</h2>
+            <p class="text-center">We sent the code to your Email</p>
             <div class="login-line"></div>
             <form @submit.prevent="onSubmit" class="container">
               <div class="form-group">
@@ -113,5 +114,8 @@ div{
 .login_container{
   margin-top: 24px;
   margin-bottom: 106px;
+}
+h2 {
+  margin-bottom: 0px;
 }
 </style>

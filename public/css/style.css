@@ -74,8 +74,8 @@ button{
 p{
 	font-size: 16px;
 	line-height: 1.6em;
-	font-weight: 200;
-	color: #555555;
+	font-weight: 400;
+	color: #9d9d9d;
 }
 
 .text{
@@ -507,9 +507,9 @@ img{
 	position:relative;
 	display:block;
 	text-align:center;
-	font-size:16px;
-	line-height:35px;
-	font-weight:bold;
+	font-size: 16px;
+	line-height: 35px;
+	font-weight: 600;
 	opacity:1;
 	color:#001fb0;
 	padding: 0px;
@@ -1496,9 +1496,9 @@ img{
 ***/
 
 .bg-hero{
-	margin-top: 100px;
-	font-family: 'Montserrat', cursive, sans-serif !important;
-    padding-bottom: 11px;
+	margin-top: 83px;
+	font-family: 'Montserrat';
+	height: 100vh;
 }
 .content-box{
 	margin-top: 110px;
@@ -1525,12 +1525,11 @@ img{
 .works-section{
 	/*position:relative;*/
 	padding:90px 0px 110px;
-	background-color:#ffffff;
+	background-color:#f6f9fc;
 }
 
 .works-section h4{
 	color: #000;
-	padding-bottom: 5px;
 }
 
 .works-text-content{
@@ -1582,11 +1581,11 @@ top: 62px;
 }
 
 .started-block {
-	padding:30px 25px 25px;
+	padding: 54px 25px 25px;
 	color: #000;
-	background-color: #f6f9fc;
+	background-color: #fff;
 	border-left: 1px solid #f1f1f1;
-	height: 211px;
+	height: 258px;
 }
 .started-icons {
 	color: #081c7d !important;
@@ -1603,7 +1602,8 @@ top: 62px;
 }
 
 .lower-content .text{
-	color: #000 !important;
+	color: #9d9d9d !important;
+	font-weight: 400;
 }
 
 /*** 
@@ -3523,6 +3523,7 @@ top: 62px;
 	.bg-hero {
 		margin-top: 15px;
 		margin-bottom: 15px;
+		height: 110vh;
 	}
 
 
@@ -3537,9 +3538,6 @@ top: 62px;
 	} */
 	
 /* How it works */
-	.works-image{
-		margin-top: 102px;
-	}
 }
 
 

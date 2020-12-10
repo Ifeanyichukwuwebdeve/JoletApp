@@ -1,25 +1,20 @@
 <template>
   <div>
     <!-- Top Sidebar -->
-    <div class="container fixed-top nav-container">
-      <div class="row justify-content-between">
-        <div class="col-4 logo ">
+    <div class="fixed-top nav-container">
+      <div class="container">
+        <div class="row">
+        <div class="col-2 logo pt-1">
           <img src="/img/logo.png">
         </div>
-        <div class="col-5 text-center">
+        <div class="col-10 text-right">
           <div class="links">
-            <router-link to="/" class="home"><i class="fa fa-home mr-3"></i></router-link>
+            <router-link to="/" class="home">Home</router-link>
             <!-- /.dropdown -->
 
-            <div class="d-inline dropdown mr-3 mx-3">
-              <a
-                class="dropdown-toggle"
-                id="notifications"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                href="#"
-                ><span>10</span><i class="fa fa-bell"></i
+            <div class="d-inline mr-3 mx-3">
+              <a href="#"
+                ><span></span><i class="fa fa-bell"></i
               ></a>
               <div
                 class="dropdown-menu dropdown-menu-right rounded-0 pt-0"
@@ -43,20 +38,15 @@
               </div>
               <!-- /.dropdown-menu -->
             </div>
-            <!-- /.dropdown -->
-
-            <!-- /.dropdown -->
-
-            <div class="d-inline dropdown">
-              <b-dropdown id="dropdown-1" :text="name" class="m-md-2">
+            <div class="d-inline">
+              <b-dropdown id="dropdown-1" variant="primary" :text="name" class="m-md-2 drop">
                 <b-dropdown-item @click="logout">Log out</b-dropdown-item>
-            </b-dropdown>
-
+              </b-dropdown>
               <!-- /.dropdown-menu -->
             </div>
-            <!-- /.dropdown -->
           </div>
         </div>
+      </div>
       </div>
     </div>
     <!-- END TOP NAVBAR -->
@@ -98,4 +88,10 @@ export default {
 .nav-container{
   background-color: #fff;
 }
+.nav-container a{
+  color: #001fb0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 </style>

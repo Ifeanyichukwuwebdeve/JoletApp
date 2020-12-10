@@ -62,12 +62,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  background-color: #fff;
-}
 .bottom-nav {
   color: #000;
-
+  background-color: #fff;
   i {
     font-size: 25px;
   }

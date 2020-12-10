@@ -1,6 +1,7 @@
 import Home from '@/views/Home'
 
-export default [
+export default
+[
   {
     path: '/',
     name: 'Home',
@@ -52,36 +53,49 @@ export default [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: () => import(/* webpackChunkName: 'dashboard' */ '@/views/dashboard/Dashboard.vue')
+    component: () => import(/* webpackChunkName: 'dashboard' */ '@/views/dashboard/Dashboard.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/quiz',
     name: 'Questions',
-    component: () => import(/* webpackChunkName: 'questions' */ '../views/Questions.vue')
+    component: () => import(/* webpackChunkName: 'questions' */ '../views/Questions.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/settings',
     name: 'Settings',
-    component: () => import(/* webpackChunkName: 'settings' */ '@/views/dashboard/Settings.vue')
+    component: () => import(/* webpackChunkName: 'settings' */ '@/views/dashboard/Settings.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/withdraw',
     name: 'Withdraw',
-    component: () => import(/* webpackChunkName: 'withdraw' */ '@/views/dashboard/Withdraw.vue')
+    component: () => import(/* webpackChunkName: 'withdraw' */ '@/views/dashboard/Withdraw.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/admin',
     name: 'Admin',
-    component: () => import(/* webpackChunkName: 'admin' */ '@/views/admin/Admin.vue')
+    component: () => import(/* webpackChunkName: 'admin' */ '@/views/admin/Admin.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/admin-withdraw',
     name: 'AdmainWithdraw',
-    component: () => import(/* webpackChunkName: 'admin-withdraw' */ '@/views/admin/WithdrawalRequest.vue')
+    component: () => import(/* webpackChunkName: 'admin-withdraw' */ '@/views/admin/WithdrawalRequest.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/admin-user-info/:id',
     name: 'admin-user-info',
-    component: () => import(/* webpackChunkName: 'admin-user-info' */ '@/views/admin/User.vue')
+    component: () => import(/* webpackChunkName: 'admin-user-info' */ '@/views/admin/User.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/404',
+    alias: '*',
+    name: 'Not-found',
+    component: () => import(/* webpackChunkName: 'admin-user-info' */ '@/views/NotFound.vue')
   }
 ]
