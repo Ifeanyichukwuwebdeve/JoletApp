@@ -89,14 +89,14 @@
       <div class="row">
         <div class="col-12 col-md-7 text-center about-text-content">
           <div class="about-container">
-            <p class="about-little-head">About</p>
-            <h2 class="about-big-head">Welcome</h2>
-            <p class="about-texts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam omnis nulla consequuntur sapiente vero, quibusdam asperiores, in eaque aperiam sed error fuga voluptas! Doloribus exercitationem laudantium quam voluptatem sunt debitis.</p>
+            <p class="about-little-head">Quiz</p>
+            <h2 class="about-big-head">Categories</h2>
+            <p class="about-texts text-left ml-5">Our quiz are classified into five major categories for you to select and answer from depending on your knowledge of the selected category. These categories are General Questions, Sports, Movies/Tv, Music and Mind Twisters.</p>
           </div>
         </div>
-        <div class="col-12 col-md-5 about-image">
+        <div class="col-12 col-md-5 pl-0 pr-0 m-0 about-image">
           <div class="images">
-            <img src="img/hero.jpg" alt="">
+            <img src="img/category.jpg" alt="">
           </div>
         </div>
       </div>
@@ -219,14 +219,15 @@ h2{
 }
 .about-container{
   background-color: #081c7d;
-  padding: 90px 90px 60px;
+  padding: 107px 90px 108px;
   color: #fff;
 }
 .about-container p{
   color: #fff;
 }
 .images img{
-  height: 374px;
+      width: 560px;
+    height: 438px;
 }
 h1{
   color: #000 !important;
@@ -274,6 +275,36 @@ h1{
   }
   .works-texts{
     margin-top: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
   }
+  .images-how{
+    width: 306px;
+    margin-left: -8px;
+}
+
+.about-container {
+    background-color: #081c7d;
+    padding: 90px 50px 90px;
+    color: #fff;
+}
+.images img {
+    width: 455px;
+    height: 319px;
+}
+.about-container p {
+    margin-left: 0px !important;
+}
+ .text-content {
+    padding-left: 16px;
+}
+.works-texts p{
+  font-weight: 400;
+  font-size: 16px;
+}
+.works-section {
+    padding: 90px 0px 60px;
+    background-color: #f6f9fc;
+}
 }
 </style>

@@ -41,11 +41,15 @@
             </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 play-game">
-              <router-link v-if="user.isVerified" class="btn play-btn" to="/quiz">Play Game</router-link>
+              <button v-if="user.isVerified" class="btn play-btn" v-b-modal.modal-2>Play Game</button>
               <router-link v-if="!user.isVerified" to="/verify" class="btn play-btn">Get verified</router-link>
             </div>
         </div>
     </section>
+    <b-modal id="modal-2" title="">
+    <router-link v-if="user.isVerified" class="btn play-btn" to="/quiz">Demo Game</router-link>
+    <router-link v-if="user.isVerified" class="btn play-btn" to="/quiz">Live Game</router-link>
+  </b-modal>
   </div>
 </template>
 

@@ -6,5 +6,6 @@ export default {
   },
   withdrawRequests: {},
   category: 0,
-  loading: false
+  loading: false,
+  index: null
 }

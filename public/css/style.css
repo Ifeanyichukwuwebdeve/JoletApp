@@ -3523,7 +3523,7 @@ top: 62px;
 	.bg-hero {
 		margin-top: 15px;
 		margin-bottom: 15px;
-		height: 110vh;
+		height: 128vh;
 	}
 
 
@@ -3550,7 +3550,21 @@ top: 62px;
 	}
 	/* bg-logo */
 
-	
+	.works-section {
+    padding: 90px 0px 60px;
+    background-color: #f6f9fc;
+}
+
+.works-texts {
+	margin-top: 0px;
+	margin-right: 0px;
+	padding-right: 24px;
+}
+
+.images-how {
+	width: 306px;
+	margin-left: 68px;
+}
 
 	/* All pages tittle */
 	.page-title {

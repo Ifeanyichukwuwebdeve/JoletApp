@@ -1,7 +1,6 @@
 import axios from './axiosConfig'
 // import user from './modules/user'
-import router from '../router'
-
+// import router from '../router'
 export default {
   async getUserGame ({ commit, rootState }) {
     try {
@@ -39,6 +38,6 @@ export default {
       message: 'Game data sent!'
     }
     commit('updateAlert', alert, { root: true })
-    router.push('/dashboard')
+    // router.push('/dashboard')
   }
 }

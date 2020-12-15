@@ -8,7 +8,7 @@
               <i class="fa fa-chevron-circle-down"></i>
               <p>Category</p>
               <b-modal id="modal-1" title="BootstrapVue">
-                <h5 class="text-dark text-center">Choose the Catagory you would like to answer from!!</h5>
+                <h5 class="text-dark text-center">Choose the category you would like to answer from!!</h5>
                 <b-form-select
                   v-model="selected"
                   :options="options"
@@ -45,11 +45,11 @@ export default {
     return {
       selected: null,
       options: [
-        { value: 9, text: 'General Questions' },
+        { value: 9, text: 'Mind Twisters' },
         { value: 21, text: 'Sports' },
         { value: 14, text: 'Movies/Tv' },
-        { value: 13, text: 'Entertainment' },
-        { value: null, text: 'Mind Twisters' }
+        { value: 13, text: 'Music' },
+        { value: null, text: 'General Questions' }
       ]
     }
   },

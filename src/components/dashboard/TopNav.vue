@@ -4,10 +4,10 @@
     <div class="fixed-top nav-container">
       <div class="container">
         <div class="row">
-        <div class="col-2 logo pt-1">
+        <div class="col-4 logo pt-1">
           <img src="/img/logo.png">
         </div>
-        <div class="col-10 text-right">
+        <div class="col-8 text-right">
           <div class="links">
             <router-link to="/" class="home">Home</router-link>
             <!-- /.dropdown -->

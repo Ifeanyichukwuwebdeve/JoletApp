@@ -3,6 +3,8 @@
     <QuestionHeader
       :numCorrect="numCorrect"
       :numTotal="numTotal"
+      :questions="questions.length"
+      :index="index"
     />
 
   <div class="container">
@@ -31,7 +33,7 @@
     </div>
   </div>
 
-    <div class="container mt-5">
+    <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-8">
           <QuestionBox
