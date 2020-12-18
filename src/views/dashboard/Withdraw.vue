@@ -63,7 +63,7 @@
                   required
                 />
               </div>
-              <button :disabled="this.userGame.joletCoin >=! 200"  class="btn-submit">Send</button>
+              <button :disabled="this.userGame.joletCoin >=! 200 || this.amount > this.userGame.joletCoin"  class="btn-submit">Send</button>
             </form>
           </div>
         </div>

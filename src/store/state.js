@@ -7,5 +7,6 @@ export default {
   withdrawRequests: {},
   category: 0,
   loading: false,
+  questions: [],
   index: null
 }

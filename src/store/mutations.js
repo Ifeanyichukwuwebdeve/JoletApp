@@ -4,6 +4,9 @@ export default {
   getUserGame (state, userGame) {
     state.userGame = userGame
   },
+  fetchedQuestions (state, questions) {
+    state.questions = questions
+  },
   removeUserGame (state) {
     state.userGame = {}
   },

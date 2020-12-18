@@ -5,7 +5,7 @@
               <div class="container mb-3 mt-5">
                 <div class="row justify-content-between" type="light" variant="light">
                   <h2 class="col-4">Dashboard</h2>
-                  <h2 class="col-4">Level: {{ level }}</h2>
+                  <h2 class="col-4">Level: {{ this.userGame.level }}</h2>
               </div>
               </div>
         </div>
@@ -15,10 +15,10 @@
               <div class="card widget_2">
                 <div class="body">
                   <h6>Questions answered</h6>
-                  <h2>{{ answeredQuestions }} <small class="info">of {{ totalQuestions }}</small></h2>
+                  <h2>{{ this.userGame.answeredQuestions }} <small class="info">of {{ totalQuestions }}</small></h2>
                   <small>Total Questions</small>
                   <b-progress
-                  :value="answeredQuestions"
+                  :value="this.userGame.answeredQuestions"
                   :max="totalQuestions"
                   show-value class="mt-4">
                   </b-progress>
@@ -29,10 +29,10 @@
               <div class="card widget_2">
                 <div class="body">
                   <h6>Jolet coins earned</h6>
-                  <h2>{{ joletCoin }} <small class="info">N{{ amount }}</small></h2>
+                  <h2>{{ this.userGame.joletCoin }} <small class="info">N{{ this.userGame.joletCoin * 10 }}</small></h2>
                   <small>Total coins</small>
                   <b-progress l-green
-                  :value="amount"
+                  :value="this.userGame.joletCoin * 10"
                   :max="1000"
                   show-value class="mt-4">
                   </b-progress>
@@ -48,13 +48,13 @@
     </section>
     <b-modal id="modal-2" title="">
     <router-link v-if="user.isVerified" class="btn play-btn" to="/quiz">Demo Game</router-link>
-    <router-link v-if="user.isVerified" class="btn play-btn" to="/quiz">Live Game</router-link>
+    <router-link v-if="user.isVerified" class="btn play-btn" to="/live-quiz">Live Game</router-link>
   </b-modal>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
 export default {
   name: 'Main',
   data () {
@@ -63,29 +63,12 @@ export default {
       value: 20,
       max: 40,
       totalQuestions: 74,
-      answeredQuestions: 50,
-      joletCoin: 20,
       amount: null
     }
   },
   computed: {
     ...mapState('auth', ['user']),
     ...mapState(['userGame'])
-  },
-  methods: {
-    ...mapActions(['getUserGame']),
-    getGame () {
-      this.getUserGame()
-      const totalAmount = this.userGame.joletCoin * 10
-      this.amount = totalAmount
-      return this.amount
-    }
-  },
-  mounted () {
-    this.getGame()
-    this.joletCoin = this.userGame.joletCoin
-    this.answeredQuestions = this.userGame.answeredQuestions
-    this.level = this.userGame.level
   }
 }
 </script>

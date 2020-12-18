@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-jumbotron header="" lead="Bootstrap v4 Components for Vue.js 2">
+    <b-jumbotron header="" lead="">
       <template v-slot:lead>{{currentQuestion.question}}</template>
 
       <hr class="my-4" />
@@ -21,17 +21,26 @@
         :disabled="selectedIndex === null || this.answered"
         >Submit
         </b-button>
+        <b-button
+       variant="danger"
+        @click="endGame"
+        :disabled="numTotal === 0"
+        >End game
+        </b-button>
     </b-jumbotron>
   </div>
 </template>
 
 <script>
 import _ from 'lodash'
+import { mapActions } from 'vuex'
 export default {
   name: 'QuestionsBox',
   props: {
     currentQuestion: Object,
-    increment: Function
+    increment: Function,
+    numTotal: Number,
+    numCorrect: Number
   },
   data () {
     return {
@@ -52,6 +61,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['updateAnswered']),
     selectAnswer (index) {
       this.selectedIndex = index
     },
@@ -82,6 +92,15 @@ export default {
         answerClass = 'incorrect'
       }
       return answerClass
+    },
+    endGame () {
+      const num = this.numCorrect
+      const payload = {
+        answeredQuestions: num,
+        joletCoin: num
+      }
+      // console.log(num)
+      this.updateAnswered(payload)
     }
   }
 }

@@ -63,6 +63,12 @@ export default
     meta: { requiresAuth: true }
   },
   {
+    path: '/live-quiz',
+    name: 'Live-quiz',
+    component: () => import(/* webpackChunkName: 'live-quiz' */ '../views/LiveQuiz.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
     path: '/settings',
     name: 'Settings',
     component: () => import(/* webpackChunkName: 'settings' */ '@/views/dashboard/Settings.vue'),
