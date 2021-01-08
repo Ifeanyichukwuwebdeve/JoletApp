@@ -63,6 +63,11 @@ export default
     meta: { requiresAuth: true }
   },
   {
+    path: '/payments',
+    name: 'Payment',
+    component: () => import(/* webpackChunkName: 'payments' */ '@/views/Payment.vue')
+  },
+  {
     path: '/live-quiz',
     name: 'Live-quiz',
     component: () => import(/* webpackChunkName: 'live-quiz' */ '../views/LiveQuiz.vue'),
